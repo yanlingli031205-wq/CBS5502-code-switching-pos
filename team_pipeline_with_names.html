@@ -1,0 +1,143 @@
+
+<style>
+  .wrap { padding: 1rem 0; font-family: var(--font-sans); }
+  .step { margin-bottom: 0; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+  .step-header { padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+  .step-num { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 99px; white-space: nowrap; }
+  .step-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); }
+  .owner { margin-left: auto; font-size: 12px; font-weight: 500; padding: 2px 10px; border-radius: 99px; white-space: nowrap; }
+  .step-body { padding: 10px 16px 13px; border-top: 0.5px solid var(--color-border-tertiary); background: var(--color-background-secondary); }
+  .step-body p { font-size: 13px; color: var(--color-text-secondary); margin: 0 0 5px; line-height: 1.55; }
+  .code-hint { font-size: 12px; font-family: var(--font-mono); background: var(--color-background-tertiary); padding: 4px 10px; border-radius: 4px; color: var(--color-text-secondary); display: inline-block; margin-top: 4px; }
+  .arrow-row { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 5px 0; }
+  .arrow-label { font-size: 11px; color: var(--color-text-tertiary); }
+  .arrow-sym { font-size: 18px; color: var(--color-text-tertiary); line-height: 1; }
+
+  /* step colors */
+  .s-gray   .step-header { background: #F1EFE8; } .s-gray   .step-num { background: #D3D1C7; color: #2C2C2A; } .s-gray   .owner { background: #D3D1C7; color: #2C2C2A; }
+  .s-purple .step-header { background: #EEEDFE; } .s-purple .step-num { background: #AFA9EC; color: #26215C; } .s-purple .owner { background: #AFA9EC; color: #26215C; }
+  .s-teal   .step-header { background: #E1F5EE; } .s-teal   .step-num { background: #5DCAA5; color: #04342C; } .s-teal   .owner { background: #5DCAA5; color: #04342C; }
+  .s-blue   .step-header { background: #E6F1FB; } .s-blue   .step-num { background: #85B7EB; color: #042C53; } .s-blue   .owner { background: #85B7EB; color: #042C53; }
+  .s-amber  .step-header { background: #FAEEDA; } .s-amber  .step-num { background: #EF9F27; color: #412402; } .s-amber  .owner { background: #EF9F27; color: #412402; }
+  .s-green  .step-header { background: #EAF3DE; } .s-green  .step-num { background: #97C459; color: #173404; } .s-green  .owner { background: #97C459; color: #173404; }
+  .s-coral  .step-header { background: #FAECE7; } .s-coral  .step-num { background: #F0997B; color: #4A1B0C; } .s-coral  .owner { background: #F0997B; color: #4A1B0C; }
+
+  @media (prefers-color-scheme: dark) {
+    .s-gray   .step-header{background:#2C2C2A;} .s-gray   .step-num,.s-gray   .owner{background:#444441;color:#D3D1C7;}
+    .s-purple .step-header{background:#26215C;} .s-purple .step-num,.s-purple .owner{background:#3C3489;color:#CECBF6;}
+    .s-teal   .step-header{background:#04342C;} .s-teal   .step-num,.s-teal   .owner{background:#0F6E56;color:#9FE1CB;}
+    .s-blue   .step-header{background:#042C53;} .s-blue   .step-num,.s-blue   .owner{background:#185FA5;color:#B5D4F4;}
+    .s-amber  .step-header{background:#412402;} .s-amber  .step-num,.s-amber  .owner{background:#854F0B;color:#FAC775;}
+    .s-green  .step-header{background:#173404;} .s-green  .step-num,.s-green  .owner{background:#3B6D11;color:#C0DD97;}
+    .s-coral  .step-header{background:#4A1B0C;} .s-coral  .step-num,.s-coral  .owner{background:#993C1D;color:#F5C4B3;}
+    .step-body { background: transparent; }
+  }
+</style>
+
+<div class="wrap">
+
+  <!-- Step 1 -->
+  <div class="step s-gray">
+    <div class="step-header">
+      <span class="step-num">Step 1</span>
+      <span class="step-title">数据收集</span>
+      <span class="owner">zqy</span>
+    </div>
+    <div class="step-body">
+      <p>从 LIHKG / YouTube 留言 / 小红书香港区收集粤英混码评论，目标 300 条（目前已有 30+ 条）。筛选标准：每句至少含一个英文词，纯粤语或纯英文不算。</p>
+      <p>整理格式：每行一句，存成 .txt 或 .csv，列名 <span class="code-hint">sentence_id | raw_text</span></p>
+    </div>
+  </div>
+
+  <div class="arrow-row"><span class="arrow-sym">↓</span><span class="arrow-label">300条原始句子交给 pyt</span></div>
+
+  <!-- Step 2 -->
+  <div class="step s-purple">
+    <div class="step-header">
+      <span class="step-num">Step 2</span>
+      <span class="step-title">PyCantonese 自动标注（生成待修正数据）</span>
+      <span class="owner">pyt</span>
+    </div>
+    <div class="step-body">
+      <p>用 PyCantonese 对全部 300 句做自动 POS 标注，输出每个 token 的标注结果。同时用正则识别语言（ASCII = EN / 其余 = ZH），标记每个 token 的语言 ID。</p>
+      <span class="code-hint">pc.pos_tag(sentence) → [(token, lang_id, auto_pos), ...]</span>
+      <p style="margin-top:8px">输出格式交给 lyl：<span class="code-hint">token | lang_id | auto_pos | gold_pos（空白待填）</span></p>
+      <p>同时记录哪些句子含英文词、英文词占比，作为数据集统计（用于 report dataset 章节）。</p>
+    </div>
+  </div>
+
+  <div class="arrow-row"><span class="arrow-sym">↓</span><span class="arrow-label">带 auto_pos 的标注文件交给 lyl</span></div>
+
+  <!-- Step 3 -->
+  <div class="step s-teal">
+    <div class="step-header">
+      <span class="step-num">Step 3</span>
+      <span class="step-title">人工修正 → 建立 Gold Standard</span>
+      <span class="owner">lyl</span>
+    </div>
+    <div class="step-body">
+      <p>只需检查英文 token 的 auto_pos 是否正确，粤语部分直接保留 PyCantonese 结果。将错误的标注手动改成正确词性，填入 gold_pos 列。</p>
+      <p>同时统计错误类型（如：NOUN 误标为其他、VERB 被标为 NOUN 等），这些错误案例就是 rule-based 方法的设计依据，也是 report 里 Baseline Analysis 的核心内容。</p>
+      <p>完成后的文件即为整个项目的 <strong style="color:var(--color-text-primary)">Gold Standard 数据集</strong>，供 lyl 自己、zxy、szq 三人共用。</p>
+    </div>
+  </div>
+
+  <div class="arrow-row"><span class="arrow-sym">↓</span><span class="arrow-label">Gold Standard 数据集分发给下方三人</span></div>
+
+  <!-- Step 4 parallel -->
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:0;">
+
+    <div class="step s-blue" style="margin-bottom:0">
+      <div class="step-header" style="flex-wrap:wrap; gap:6px;">
+        <span class="step-num">Step 4a</span>
+        <span class="step-title" style="font-size:13px">Rule-based 修正</span>
+        <span class="owner">lyl</span>
+      </div>
+      <div class="step-body">
+        <p>根据 Step 3 的错误统计，设计消歧规则（前后粤语词 POS / 体貌助词 咗·緊·過 等），写成 post-processing patch，在 PyCantonese 输出上修正英文词标注。</p>
+        <span class="code-hint">baseline → +rules → F1↑</span>
+      </div>
+    </div>
+
+    <div class="step s-amber" style="margin-bottom:0">
+      <div class="step-header" style="flex-wrap:wrap; gap:6px;">
+        <span class="step-num">Step 4b</span>
+        <span class="step-title" style="font-size:13px">BiLSTM-CRF</span>
+        <span class="owner">zxy</span>
+      </div>
+      <div class="step-body">
+        <p>以 Gold Standard 训练 BiLSTM-CRF（240/30/30 分割），输入特征含词嵌入 + 语言ID。CRF 层保证标注序列合法，捕捉长距离粤语上下文依存。</p>
+        <span class="code-hint">torchcrf + PyTorch</span>
+      </div>
+    </div>
+
+    <div class="step s-green" style="margin-bottom:0">
+      <div class="step-header" style="flex-wrap:wrap; gap:6px;">
+        <span class="step-num">Step 4c</span>
+        <span class="step-title" style="font-size:13px">mBERT fine-tune</span>
+        <span class="owner">szq</span>
+      </div>
+      <div class="step-body">
+        <p>fine-tune bert-base-multilingual-cased，用 BertForTokenClassification，处理 subword 对齐问题（每词取首个 subword 的预测），在同一数据集上训练。</p>
+        <span class="code-hint">HuggingFace Transformers</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="arrow-row"><span class="arrow-sym">↓</span><span class="arrow-label">四个系统的预测结果汇总给 pyt</span></div>
+
+  <!-- Step 5 -->
+  <div class="step s-coral">
+    <div class="step-header">
+      <span class="step-num">Step 5</span>
+      <span class="step-title">评估 &amp; 结果分析</span>
+      <span class="owner">pyt</span>
+    </div>
+    <div class="step-body">
+      <p>整合四个系统（Baseline / +Rules / BiLSTM-CRF / mBERT）在测试集上的预测结果，统一计算 Accuracy / Precision / Recall / F1（per-class）。制作对比表格和混淆矩阵，挑选定性例子展示各系统在同一句的不同输出。</p>
+      <span class="code-hint">sklearn.metrics → classification_report</span>
+    </div>
+  </div>
+
+</div>
