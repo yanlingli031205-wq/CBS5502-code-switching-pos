@@ -106,4 +106,24 @@ token | context | auto_pos | gold_pos | error_type | note
 
 ## GitHub 项目建立流程
 
-见下方说明（由 lyl 负责建立）。
+仓库地址：[https://github.com/yanlingli031205-wq/CBS5502-code-switching-pos](https://github.com/yanlingli031205-wq/CBS5502-code-switching-pos)
+
+### 组员如何克隆项目
+
+```bash
+git clone https://github.com/yanlingli031205-wq/CBS5502-code-switching-pos.git
+```
+
+### 组员如何提交自己的文件
+
+```bash
+# 1. 把文件放到对应文件夹
+# 2. 在终端运行：
+git add .
+git commit -m "描述你做了什么，例如：add gold standard annotation"
+git push
+```
+
+### 邀请组员协作
+
+仓库页面 → Settings → Collaborators → Add people → 填入对方 GitHub 用户名
