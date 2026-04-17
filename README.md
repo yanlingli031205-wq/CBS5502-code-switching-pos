@@ -104,6 +104,20 @@ token | context | auto_pos | gold_pos | error_type | note
 
 ---
 
+## 数据处理备注
+
+### pyt 标注表格的版本迭代
+
+**问题（v1）**：pyt 第一版交给 lyl 的表格（`english_tokens.csv`）存在英文 token 漏提取的问题——当句子中出现连续多个英文词时（如 `Donald Trump`、`Elon Musk`、`final fantasy`），PyCantonese 仅对第一个英文词做了 POS 标注，后续紧跟的英文词未被提取。
+
+**原因**：PyCantonese 的分词器在处理粤英混码时，对连续 ASCII 序列的切分逻辑不稳定，部分情况下会将多词序列视为单一单元，或仅保留首词的标注结果。
+
+**修复（v2）**：pyt 修改了数据清洗流程，引入 NER（命名实体识别）库，并设置 NER 结果强制优先，使命名实体（如人名、地名、品牌名等多词结构）能被完整切分和提取，不再出现漏词。修复后的文件即现版本 `corpus/english_tokens_copy.csv`。
+
+**对 lyl 工作的影响**：lyl 在 v1 表格中已自行补填了部分缺失 token（在对应列手动添加 token，`auto_pos` 填 `?`，`gold_pos` 填正确词性并黄色高亮标注）。v2 版本解决了该问题，后续不再需要手动补填。
+
+---
+
 ## GitHub 项目建立流程
 
 仓库地址：[https://github.com/yanlingli031205-wq/CBS5502-code-switching-pos](https://github.com/yanlingli031205-wq/CBS5502-code-switching-pos)
