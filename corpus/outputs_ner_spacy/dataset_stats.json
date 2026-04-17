@@ -1,0 +1,2359 @@
+{
+  "input_txt_file": "cantonese_english_text.txt",
+  "input_csv_file": "5572group.csv",
+  "csv_text_column": "Comment",
+  "num_sentences": 335,
+  "num_sentences_with_en": 323,
+  "pct_sentences_with_en": 0.9641791044776119,
+  "total_tokens": 5891,
+  "en_tokens": 603,
+  "pct_en_tokens": 0.10235953148871159,
+  "ner_augmented_en_tokens_total": 120,
+  "per_sentence": [
+    {
+      "sentence_id": 1,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 11,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 2,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 11,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 3,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 7,
+      "en_ratio": 0.2857142857142857
+    },
+    {
+      "sentence_id": 4,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 9,
+      "en_ratio": 0.2222222222222222
+    },
+    {
+      "sentence_id": 5,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 6,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 16,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 7,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 7,
+      "en_ratio": 0.2857142857142857
+    },
+    {
+      "sentence_id": 8,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 9,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 10,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 12,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 11,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 16,
+      "en_ratio": 0.0625
+    },
+    {
+      "sentence_id": 12,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 11,
+      "en_ratio": 0.18181818181818182
+    },
+    {
+      "sentence_id": 13,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 14,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 17,
+      "en_ratio": 0.17647058823529413
+    },
+    {
+      "sentence_id": 15,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 19,
+      "en_ratio": 0.10526315789473684
+    },
+    {
+      "sentence_id": 16,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 10,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 17,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 9,
+      "en_ratio": 0.2222222222222222
+    },
+    {
+      "sentence_id": 18,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 11,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 19,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 9,
+      "en_ratio": 0.3333333333333333
+    },
+    {
+      "sentence_id": 20,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 21,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 22,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 23,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 5,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 24,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 25,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 26,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 9,
+      "en_ratio": 0.2222222222222222
+    },
+    {
+      "sentence_id": 27,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 11,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 28,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 15,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 29,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 13,
+      "en_ratio": 0.07692307692307693
+    },
+    {
+      "sentence_id": 30,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 31,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 11,
+      "en_ratio": 0.18181818181818182
+    },
+    {
+      "sentence_id": 32,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 14,
+      "en_ratio": 0.07142857142857142
+    },
+    {
+      "sentence_id": 33,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 34,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 11,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 35,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 22,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 36,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 37,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 15,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 38,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 39,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 40,
+      "has_english": true,
+      "en_tokens": 6,
+      "total_tokens": 40,
+      "en_ratio": 0.15
+    },
+    {
+      "sentence_id": 41,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 21,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 42,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 22,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 43,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 5,
+      "en_ratio": 0.4
+    },
+    {
+      "sentence_id": 44,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 45,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 29,
+      "en_ratio": 0.034482758620689655
+    },
+    {
+      "sentence_id": 46,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 47,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 39,
+      "en_ratio": 0.10256410256410256
+    },
+    {
+      "sentence_id": 48,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 5,
+      "en_ratio": 0.4
+    },
+    {
+      "sentence_id": 49,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 27,
+      "en_ratio": 0.07407407407407407
+    },
+    {
+      "sentence_id": 50,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 12,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 51,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 12,
+      "en_ratio": 0.08333333333333333
+    },
+    {
+      "sentence_id": 52,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 14,
+      "en_ratio": 0.07142857142857142
+    },
+    {
+      "sentence_id": 53,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 54,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 6,
+      "en_ratio": 0.3333333333333333
+    },
+    {
+      "sentence_id": 55,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 18,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 56,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 11,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 57,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 58,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 22,
+      "en_ratio": 0.045454545454545456
+    },
+    {
+      "sentence_id": 59,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 60,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 58,
+      "en_ratio": 0.05172413793103448
+    },
+    {
+      "sentence_id": 61,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 9,
+      "en_ratio": 0.4444444444444444
+    },
+    {
+      "sentence_id": 62,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 63,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 64,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 7,
+      "en_ratio": 0.2857142857142857
+    },
+    {
+      "sentence_id": 65,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 20,
+      "en_ratio": 0.05
+    },
+    {
+      "sentence_id": 66,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 13,
+      "en_ratio": 0.15384615384615385
+    },
+    {
+      "sentence_id": 67,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 22,
+      "en_ratio": 0.045454545454545456
+    },
+    {
+      "sentence_id": 68,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 13,
+      "en_ratio": 0.23076923076923078
+    },
+    {
+      "sentence_id": 69,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 12,
+      "en_ratio": 0.08333333333333333
+    },
+    {
+      "sentence_id": 70,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 71,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 3,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 72,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 17,
+      "en_ratio": 0.058823529411764705
+    },
+    {
+      "sentence_id": 73,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 14,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 74,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 24,
+      "en_ratio": 0.08333333333333333
+    },
+    {
+      "sentence_id": 75,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 15,
+      "en_ratio": 0.06666666666666667
+    },
+    {
+      "sentence_id": 76,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 77,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 21,
+      "en_ratio": 0.047619047619047616
+    },
+    {
+      "sentence_id": 78,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 4,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 79,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 14,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 80,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 81,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 4,
+      "en_ratio": 0.5
+    },
+    {
+      "sentence_id": 82,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 83,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 84,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 4,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 85,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 86,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 36,
+      "en_ratio": 0.027777777777777776
+    },
+    {
+      "sentence_id": 87,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 11,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 88,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 18,
+      "en_ratio": 0.2222222222222222
+    },
+    {
+      "sentence_id": 89,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 15,
+      "en_ratio": 0.06666666666666667
+    },
+    {
+      "sentence_id": 90,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 15,
+      "en_ratio": 0.06666666666666667
+    },
+    {
+      "sentence_id": 91,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 27,
+      "en_ratio": 0.07407407407407407
+    },
+    {
+      "sentence_id": 92,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 24,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 93,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 36,
+      "en_ratio": 0.05555555555555555
+    },
+    {
+      "sentence_id": 94,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 88,
+      "en_ratio": 0.022727272727272728
+    },
+    {
+      "sentence_id": 95,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 25,
+      "en_ratio": 0.08
+    },
+    {
+      "sentence_id": 96,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 97,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 98,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 20,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 99,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 5,
+      "en_ratio": 0.4
+    },
+    {
+      "sentence_id": 100,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 14,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 101,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 102,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 103,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 15,
+      "en_ratio": 0.06666666666666667
+    },
+    {
+      "sentence_id": 104,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 20,
+      "en_ratio": 0.05
+    },
+    {
+      "sentence_id": 105,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 28,
+      "en_ratio": 0.03571428571428571
+    },
+    {
+      "sentence_id": 106,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 8,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 107,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 8,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 108,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 14,
+      "en_ratio": 0.07142857142857142
+    },
+    {
+      "sentence_id": 109,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 110,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 6,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 111,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 5,
+      "en_ratio": 0.8
+    },
+    {
+      "sentence_id": 112,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 113,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 25,
+      "en_ratio": 0.08
+    },
+    {
+      "sentence_id": 114,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 115,
+      "has_english": true,
+      "en_tokens": 6,
+      "total_tokens": 54,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 116,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 4,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 117,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 118,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 11,
+      "en_ratio": 0.18181818181818182
+    },
+    {
+      "sentence_id": 119,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 120,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 23,
+      "en_ratio": 0.08695652173913043
+    },
+    {
+      "sentence_id": 121,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 20,
+      "en_ratio": 0.05
+    },
+    {
+      "sentence_id": 122,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 123,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 4,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 124,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 25,
+      "en_ratio": 0.04
+    },
+    {
+      "sentence_id": 125,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 25,
+      "en_ratio": 0.04
+    },
+    {
+      "sentence_id": 126,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 4,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 127,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 6,
+      "en_ratio": 0.3333333333333333
+    },
+    {
+      "sentence_id": 128,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 129,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 23,
+      "en_ratio": 0.043478260869565216
+    },
+    {
+      "sentence_id": 130,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 14,
+      "en_ratio": 0.07142857142857142
+    },
+    {
+      "sentence_id": 131,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 22,
+      "en_ratio": 0.22727272727272727
+    },
+    {
+      "sentence_id": 132,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 21,
+      "en_ratio": 0.09523809523809523
+    },
+    {
+      "sentence_id": 133,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 134,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 11,
+      "en_ratio": 0.45454545454545453
+    },
+    {
+      "sentence_id": 135,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 4,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 136,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 137,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 138,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 33,
+      "en_ratio": 0.030303030303030304
+    },
+    {
+      "sentence_id": 139,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 30,
+      "en_ratio": 0.06666666666666667
+    },
+    {
+      "sentence_id": 140,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 15,
+      "en_ratio": 0.13333333333333333
+    },
+    {
+      "sentence_id": 141,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 12,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 142,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 13,
+      "en_ratio": 0.15384615384615385
+    },
+    {
+      "sentence_id": 143,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 144,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 15,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 145,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 32,
+      "en_ratio": 0.03125
+    },
+    {
+      "sentence_id": 146,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 147,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 22,
+      "en_ratio": 0.13636363636363635
+    },
+    {
+      "sentence_id": 148,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 3,
+      "en_ratio": 0.3333333333333333
+    },
+    {
+      "sentence_id": 149,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 150,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 19,
+      "en_ratio": 0.05263157894736842
+    },
+    {
+      "sentence_id": 151,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 15,
+      "en_ratio": 0.13333333333333333
+    },
+    {
+      "sentence_id": 152,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 33,
+      "en_ratio": 0.06060606060606061
+    },
+    {
+      "sentence_id": 153,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 14,
+      "en_ratio": 0.07142857142857142
+    },
+    {
+      "sentence_id": 154,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 155,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 156,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 14,
+      "en_ratio": 0.35714285714285715
+    },
+    {
+      "sentence_id": 157,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 16,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 158,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 22,
+      "en_ratio": 0.045454545454545456
+    },
+    {
+      "sentence_id": 159,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 31,
+      "en_ratio": 0.06451612903225806
+    },
+    {
+      "sentence_id": 160,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 35,
+      "en_ratio": 0.05714285714285714
+    },
+    {
+      "sentence_id": 161,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 19,
+      "en_ratio": 0.05263157894736842
+    },
+    {
+      "sentence_id": 162,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 8,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 163,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 16,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 164,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 165,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 42,
+      "en_ratio": 0.047619047619047616
+    },
+    {
+      "sentence_id": 166,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 15,
+      "en_ratio": 0.06666666666666667
+    },
+    {
+      "sentence_id": 167,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 85,
+      "en_ratio": 0.011764705882352941
+    },
+    {
+      "sentence_id": 168,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 169,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 16,
+      "en_ratio": 0.0625
+    },
+    {
+      "sentence_id": 170,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 17,
+      "en_ratio": 0.11764705882352941
+    },
+    {
+      "sentence_id": 171,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 18,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 172,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 28,
+      "en_ratio": 0.07142857142857142
+    },
+    {
+      "sentence_id": 173,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 11,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 174,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 175,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 8,
+      "en_ratio": 0.375
+    },
+    {
+      "sentence_id": 176,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 6,
+      "en_ratio": 0.3333333333333333
+    },
+    {
+      "sentence_id": 177,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 17,
+      "en_ratio": 0.058823529411764705
+    },
+    {
+      "sentence_id": 178,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 179,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 7,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 180,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 13,
+      "en_ratio": 0.07692307692307693
+    },
+    {
+      "sentence_id": 181,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 14,
+      "en_ratio": 0.07142857142857142
+    },
+    {
+      "sentence_id": 182,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 16,
+      "en_ratio": 0.0625
+    },
+    {
+      "sentence_id": 183,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 11,
+      "en_ratio": 0.2727272727272727
+    },
+    {
+      "sentence_id": 184,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 15,
+      "en_ratio": 0.13333333333333333
+    },
+    {
+      "sentence_id": 185,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 13,
+      "en_ratio": 0.07692307692307693
+    },
+    {
+      "sentence_id": 186,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 12,
+      "en_ratio": 0.08333333333333333
+    },
+    {
+      "sentence_id": 187,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 188,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 32,
+      "en_ratio": 0.03125
+    },
+    {
+      "sentence_id": 189,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 19,
+      "en_ratio": 0.10526315789473684
+    },
+    {
+      "sentence_id": 190,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 191,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 183,
+      "en_ratio": 0.01092896174863388
+    },
+    {
+      "sentence_id": 192,
+      "has_english": true,
+      "en_tokens": 6,
+      "total_tokens": 17,
+      "en_ratio": 0.35294117647058826
+    },
+    {
+      "sentence_id": 193,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 39,
+      "en_ratio": 0.02564102564102564
+    },
+    {
+      "sentence_id": 194,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 195,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 50,
+      "en_ratio": 0.04
+    },
+    {
+      "sentence_id": 196,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 14,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 197,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 85,
+      "en_ratio": 0.03529411764705882
+    },
+    {
+      "sentence_id": 198,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 16,
+      "en_ratio": 0.0625
+    },
+    {
+      "sentence_id": 199,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 200,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 27,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 201,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 202,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 52,
+      "en_ratio": 0.057692307692307696
+    },
+    {
+      "sentence_id": 203,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 204,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 18,
+      "en_ratio": 0.05555555555555555
+    },
+    {
+      "sentence_id": 205,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 30,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 206,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 91,
+      "en_ratio": 0.054945054945054944
+    },
+    {
+      "sentence_id": 207,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 26,
+      "en_ratio": 0.038461538461538464
+    },
+    {
+      "sentence_id": 208,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 37,
+      "en_ratio": 0.02702702702702703
+    },
+    {
+      "sentence_id": 209,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 39,
+      "en_ratio": 0.05128205128205128
+    },
+    {
+      "sentence_id": 210,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 39,
+      "en_ratio": 0.02564102564102564
+    },
+    {
+      "sentence_id": 211,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 13,
+      "en_ratio": 0.15384615384615385
+    },
+    {
+      "sentence_id": 212,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 213,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 21,
+      "en_ratio": 0.047619047619047616
+    },
+    {
+      "sentence_id": 214,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 17,
+      "en_ratio": 0.11764705882352941
+    },
+    {
+      "sentence_id": 215,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 17,
+      "en_ratio": 0.058823529411764705
+    },
+    {
+      "sentence_id": 216,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 6,
+      "en_ratio": 0.3333333333333333
+    },
+    {
+      "sentence_id": 217,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 54,
+      "en_ratio": 0.037037037037037035
+    },
+    {
+      "sentence_id": 218,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 36,
+      "en_ratio": 0.027777777777777776
+    },
+    {
+      "sentence_id": 219,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 27,
+      "en_ratio": 0.037037037037037035
+    },
+    {
+      "sentence_id": 220,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 7,
+      "en_ratio": 0.2857142857142857
+    },
+    {
+      "sentence_id": 221,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 222,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 18,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 223,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 224,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 12,
+      "en_ratio": 0.08333333333333333
+    },
+    {
+      "sentence_id": 225,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 16,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 226,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 23,
+      "en_ratio": 0.21739130434782608
+    },
+    {
+      "sentence_id": 227,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 21,
+      "en_ratio": 0.047619047619047616
+    },
+    {
+      "sentence_id": 228,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 7,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 229,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 230,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 23,
+      "en_ratio": 0.043478260869565216
+    },
+    {
+      "sentence_id": 231,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 86,
+      "en_ratio": 0.011627906976744186
+    },
+    {
+      "sentence_id": 232,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 10,
+      "en_ratio": 0.4
+    },
+    {
+      "sentence_id": 233,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 14,
+      "en_ratio": 0.07142857142857142
+    },
+    {
+      "sentence_id": 234,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 235,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 3,
+      "en_ratio": 0.3333333333333333
+    },
+    {
+      "sentence_id": 236,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 14,
+      "en_ratio": 0.2857142857142857
+    },
+    {
+      "sentence_id": 237,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 238,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 13,
+      "en_ratio": 0.15384615384615385
+    },
+    {
+      "sentence_id": 239,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 16,
+      "en_ratio": 0.1875
+    },
+    {
+      "sentence_id": 240,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 19,
+      "en_ratio": 0.05263157894736842
+    },
+    {
+      "sentence_id": 241,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 8,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 242,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 18,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 243,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 13,
+      "en_ratio": 0.07692307692307693
+    },
+    {
+      "sentence_id": 244,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 8,
+      "en_ratio": 0.375
+    },
+    {
+      "sentence_id": 245,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 16,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 246,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 16,
+      "en_ratio": 0.0625
+    },
+    {
+      "sentence_id": 247,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 7,
+      "en_ratio": 0.42857142857142855
+    },
+    {
+      "sentence_id": 248,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 19,
+      "en_ratio": 0.05263157894736842
+    },
+    {
+      "sentence_id": 249,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 35,
+      "en_ratio": 0.02857142857142857
+    },
+    {
+      "sentence_id": 250,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 42,
+      "en_ratio": 0.07142857142857142
+    },
+    {
+      "sentence_id": 251,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 252,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 13,
+      "en_ratio": 0.15384615384615385
+    },
+    {
+      "sentence_id": 253,
+      "has_english": true,
+      "en_tokens": 15,
+      "total_tokens": 67,
+      "en_ratio": 0.22388059701492538
+    },
+    {
+      "sentence_id": 254,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 19,
+      "en_ratio": 0.15789473684210525
+    },
+    {
+      "sentence_id": 255,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 30,
+      "en_ratio": 0.06666666666666667
+    },
+    {
+      "sentence_id": 256,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 257,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 27,
+      "en_ratio": 0.037037037037037035
+    },
+    {
+      "sentence_id": 258,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 7,
+      "en_ratio": 0.42857142857142855
+    },
+    {
+      "sentence_id": 259,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 260,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 11,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 261,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 20,
+      "en_ratio": 0.05
+    },
+    {
+      "sentence_id": 262,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 14,
+      "en_ratio": 0.21428571428571427
+    },
+    {
+      "sentence_id": 263,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 17,
+      "en_ratio": 0.058823529411764705
+    },
+    {
+      "sentence_id": 264,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 265,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 266,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 267,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 65,
+      "en_ratio": 0.07692307692307693
+    },
+    {
+      "sentence_id": 268,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 15,
+      "en_ratio": 0.06666666666666667
+    },
+    {
+      "sentence_id": 269,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 27,
+      "en_ratio": 0.18518518518518517
+    },
+    {
+      "sentence_id": 270,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 16,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 271,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 23,
+      "en_ratio": 0.21739130434782608
+    },
+    {
+      "sentence_id": 272,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 8,
+      "en_ratio": 0.375
+    },
+    {
+      "sentence_id": 273,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 19,
+      "en_ratio": 0.10526315789473684
+    },
+    {
+      "sentence_id": 274,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 55,
+      "en_ratio": 0.01818181818181818
+    },
+    {
+      "sentence_id": 275,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 6,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 276,
+      "has_english": true,
+      "en_tokens": 6,
+      "total_tokens": 19,
+      "en_ratio": 0.3157894736842105
+    },
+    {
+      "sentence_id": 277,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 10,
+      "en_ratio": 0.4
+    },
+    {
+      "sentence_id": 278,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 8,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 279,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 280,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 14,
+      "en_ratio": 0.21428571428571427
+    },
+    {
+      "sentence_id": 281,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 282,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 11,
+      "en_ratio": 0.2727272727272727
+    },
+    {
+      "sentence_id": 283,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 11,
+      "en_ratio": 0.2727272727272727
+    },
+    {
+      "sentence_id": 284,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 17,
+      "en_ratio": 0.058823529411764705
+    },
+    {
+      "sentence_id": 285,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 13,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 286,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 10,
+      "en_ratio": 0.3
+    },
+    {
+      "sentence_id": 287,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 21,
+      "en_ratio": 0.09523809523809523
+    },
+    {
+      "sentence_id": 288,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 289,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 25,
+      "en_ratio": 0.04
+    },
+    {
+      "sentence_id": 290,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 20,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 291,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 28,
+      "en_ratio": 0.07142857142857142
+    },
+    {
+      "sentence_id": 292,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 42,
+      "en_ratio": 0.023809523809523808
+    },
+    {
+      "sentence_id": 293,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 294,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 18,
+      "en_ratio": 0.2777777777777778
+    },
+    {
+      "sentence_id": 295,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 296,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 19,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 297,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 47,
+      "en_ratio": 0.0851063829787234
+    },
+    {
+      "sentence_id": 298,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 14,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 299,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 30,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 300,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 3,
+      "en_ratio": 0.3333333333333333
+    },
+    {
+      "sentence_id": 301,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 8,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 302,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 40,
+      "en_ratio": 0.075
+    },
+    {
+      "sentence_id": 303,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 17,
+      "en_ratio": 0.17647058823529413
+    },
+    {
+      "sentence_id": 304,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 16,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 305,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 306,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 6,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 307,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 5,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 308,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 9,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 309,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 4,
+      "en_ratio": 0.5
+    },
+    {
+      "sentence_id": 310,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 15,
+      "en_ratio": 0.06666666666666667
+    },
+    {
+      "sentence_id": 311,
+      "has_english": false,
+      "en_tokens": 0,
+      "total_tokens": 13,
+      "en_ratio": 0.0
+    },
+    {
+      "sentence_id": 312,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 10,
+      "en_ratio": 0.1
+    },
+    {
+      "sentence_id": 313,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 16,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 314,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 17,
+      "en_ratio": 0.23529411764705882
+    },
+    {
+      "sentence_id": 315,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 21,
+      "en_ratio": 0.09523809523809523
+    },
+    {
+      "sentence_id": 316,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 7,
+      "en_ratio": 0.14285714285714285
+    },
+    {
+      "sentence_id": 317,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 18,
+      "en_ratio": 0.1111111111111111
+    },
+    {
+      "sentence_id": 318,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 67,
+      "en_ratio": 0.04477611940298507
+    },
+    {
+      "sentence_id": 319,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 9,
+      "en_ratio": 0.2222222222222222
+    },
+    {
+      "sentence_id": 320,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 53,
+      "en_ratio": 0.018867924528301886
+    },
+    {
+      "sentence_id": 321,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 11,
+      "en_ratio": 0.09090909090909091
+    },
+    {
+      "sentence_id": 322,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 8,
+      "en_ratio": 0.25
+    },
+    {
+      "sentence_id": 323,
+      "has_english": true,
+      "en_tokens": 1,
+      "total_tokens": 13,
+      "en_ratio": 0.07692307692307693
+    },
+    {
+      "sentence_id": 324,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 27,
+      "en_ratio": 0.07407407407407407
+    },
+    {
+      "sentence_id": 325,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 28,
+      "en_ratio": 0.10714285714285714
+    },
+    {
+      "sentence_id": 326,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 10,
+      "en_ratio": 0.3
+    },
+    {
+      "sentence_id": 327,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 30,
+      "en_ratio": 0.13333333333333333
+    },
+    {
+      "sentence_id": 328,
+      "has_english": true,
+      "en_tokens": 4,
+      "total_tokens": 49,
+      "en_ratio": 0.08163265306122448
+    },
+    {
+      "sentence_id": 329,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 18,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 330,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 4,
+      "en_ratio": 0.5
+    },
+    {
+      "sentence_id": 331,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 4,
+      "en_ratio": 0.5
+    },
+    {
+      "sentence_id": 332,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 16,
+      "en_ratio": 0.125
+    },
+    {
+      "sentence_id": 333,
+      "has_english": true,
+      "en_tokens": 2,
+      "total_tokens": 12,
+      "en_ratio": 0.16666666666666666
+    },
+    {
+      "sentence_id": 334,
+      "has_english": true,
+      "en_tokens": 5,
+      "total_tokens": 25,
+      "en_ratio": 0.2
+    },
+    {
+      "sentence_id": 335,
+      "has_english": true,
+      "en_tokens": 3,
+      "total_tokens": 40,
+      "en_ratio": 0.075
+    }
+  ]
+}
