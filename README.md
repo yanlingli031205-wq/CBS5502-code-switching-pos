@@ -10,9 +10,9 @@
 |------|----------|------|
 | zqy | Step 1 数据收集 | 完成 |
 | pyt | Step 2 PyCantonese 自动标注 | 完成 |
-| **lyl** | **Step 3 人工修正 Gold Standard + Step 4a Rule-based** | **进行中** |
-| zxy | Step 4b BiLSTM-CRF | 待 Gold Standard |
-| szq | Step 4c mBERT fine-tune | 待 Gold Standard |
+| **lyl** | **Step 3 人工修正 Gold Standard + Step 4a Rule-based** | **Step 3 完成 / Step 4a 进行中** |
+| zxy | Step 4b BiLSTM-CRF | 可开始（请使用 gold_standard_cleaned.csv） |
+| szq | Step 4c mBERT fine-tune | 可开始（请使用 gold_standard_cleaned.csv） |
 | pyt | Step 5 评估 & 结果分析 | 待所有模型完成 |
 
 ---
@@ -28,10 +28,12 @@ CBS5502_group_project_code_switching/
 │   └── english_tokens.csv         ← pyt 给 lyl 的待填表格（只含英文 token）
 │
 ├── annotation/                    ← lyl 的工作输出
-│   ├── gold_standard/             ← 放完成后的 gold standard 文件
-│   │   └── gold_standard.csv      ← (lyl 产出，供全组共用)
-│   └── error_analysis/            ← 放错误分析统计
-│       └── error_analysis.csv     ← (lyl 产出，供 report 使用)
+│   ├── gold_standard/             ← gold standard 文件（lyl 完成）
+│   │   ├── gold_standard_completed.csv   ← 完整人工标注结果（含 / 行）
+│   │   ├── gold_standard_cleaned.csv     ← ⭐ 清洗后版本（供模型训练与评估使用）
+│   │   └── annotation_report.md          ← 标注统计报告（正确率 48.86%）
+│   └── error_analysis/            ← 错误分析
+│       └── error_analysis_report.md      ← 71 条错误归类（中英双语）
 │
 ├── models/
 │   ├── rule_based/                ← lyl 的 rule-based 系统
@@ -56,7 +58,7 @@ CBS5502_group_project_code_switching/
 
 ## lyl 的具体任务
 
-### Step 3：人工修正 → Gold Standard
+### Step 3：人工修正 → Gold Standard ✅ 已完成
 
 **输入文件**：`corpus/english_tokens.csv`
 
@@ -87,16 +89,21 @@ original_text | en_token_1 | auto_pos_1 | gold_pos_1 | en_token_2 | auto_pos_2 |
 | INTJ | 感叹词 | wow, oh, lol |
 | X | 无法分类 | 缩写、网络词 |
 
-**完成后**：把填完的文件另存为 `annotation/gold_standard/gold_standard.csv`
+**完成后**：
+- `annotation/gold_standard/gold_standard_completed.csv`：完整标注结果
+- `annotation/gold_standard/gold_standard_cleaned.csv`：清洗后版本（移除 PyCantonese 未识别的 27 个 token 所在的 25 句）
+- **后续步骤请使用 `gold_standard_cleaned.csv`**
 
-### Step 3 同时：错误分析
+**标注结果统计**：
+- 总句子：335 句，英文 token：569 个（cleaned）
+- PyCantonese 自动标注正确率：**48.86%**
+- 详见 `annotation/gold_standard/annotation_report.md`
 
-统计 auto_pos ≠ gold_pos 的案例，记录错误类型（如：NOUN 被标成 VERB），存入 `annotation/error_analysis/error_analysis.csv`
+### Step 3 同时：错误分析 ✅ 已完成
 
-格式建议：
-```
-token | context | auto_pos | gold_pos | error_type | note
-```
+归纳 71 条 PyCantonese 标注错误，分为 PROPN 过度标注、NOUN 过度标注、误判为 ADJ/VERB/其他词性、分词识别问题、规则建议共 7 大类，含中英双语版本。
+
+详见 `annotation/error_analysis/error_analysis_report.md`
 
 ### Step 4a：Rule-based 修正
 
