@@ -11,8 +11,8 @@
 | zqy | Step 1 数据收集 | 完成 |
 | pyt | Step 2 PyCantonese 自动标注 | 完成 |
 | **lyl** | **Step 3 人工修正 Gold Standard + Step 4a Rule-based** | **Step 3 完成 / Step 4a 进行中** |
-| zxy | Step 4b BiLSTM-CRF | 可开始（请使用 gold_standard_cleaned.csv） |
-| szq | Step 4c mBERT fine-tune | 可开始（请使用 gold_standard_cleaned.csv） |
+| zxy | Step 4b BiLSTM-CRF | 可开始（请使用 data/train.conll + data/dev.conll + data/test.conll） |
+| szq | Step 4c mBERT fine-tune | 可开始（请使用 data/train.conll + data/dev.conll + data/test.conll） |
 | pyt | Step 5 评估 & 结果分析 | 待所有模型完成 |
 
 ---
@@ -47,7 +47,13 @@ CBS5502_group_project_code_switching/
 ├── report/
 │   └── figures/                   ← 图表截图
 │
+├── data/                          ← ⭐ Step 4 模型输入（CoNLL 格式，70/15/15 划分）
+│   ├── train.conll                ← 训练集（216 句，388 tokens）
+│   ├── dev.conll                  ← 验证集（46 句，76 tokens）
+│   └── test.conll                 ← 测试集（47 句，98 tokens）
+│
 ├── scripts/                       ← 公用脚本
+│   └── split_to_conll.py          ← 生成上述 CoNLL 文件的脚本（seed=42）
 │
 ├── README.md
 ├── full_project_pipeline.svg
@@ -104,6 +110,31 @@ original_text | en_token_1 | auto_pos_1 | gold_pos_1 | en_token_2 | auto_pos_2 |
 归纳 71 条 PyCantonese 标注错误，分为 PROPN 过度标注、NOUN 过度标注、误判为 ADJ/VERB/其他词性、分词识别问题、规则建议共 7 大类，含中英双语版本。
 
 详见 `annotation/error_analysis/error_analysis_report.md`
+
+### Step 4（公共数据）：CoNLL 划分 ✅ 已完成
+
+由 `scripts/split_to_conll.py` 生成，输出到 `data/` 目录。
+
+**格式**（CoNLL，token + TAB + gold_pos，句间空行）：
+```
+# sent_id = 3
+# text = 搵林律師claim爆你每架連機師補品賠10億美金！
+claim	VERB
+
+# sent_id = 4
+...
+```
+
+**划分统计**（总计 309 条有效句子，1 条因 gold_pos 全空被过滤）：
+
+| 集合 | 句子数 | Token 数 | 用途 |
+|------|--------|----------|------|
+| train.conll | 216 | 388 | 模型训练 |
+| dev.conll   | 46  | 76  | 超参调优 |
+| test.conll  | 47  | 98  | 最终评估（所有模型使用同一测试集） |
+
+- 随机种子：`random.seed(42)`，结果可复现
+- Rule-based 只需读取 `test.conll` 进行评估，无需 train/dev
 
 ### Step 4a：Rule-based 修正
 

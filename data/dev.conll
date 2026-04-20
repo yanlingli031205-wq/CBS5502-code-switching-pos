@@ -1,0 +1,214 @@
+# sent_id = 212
+# text = 我係native speaker都好想follow佢channel
+native	ADJ
+speaker	NOUN
+follow	VERB
+
+# sent_id = 60
+# text = 難怪大家都說gay 很帥，你們就是帥gay代表
+gay	NOUN
+
+# sent_id = 15
+# text = 我噚日去咗个party，超high。
+party	NOUN
+high	ADJ
+
+# sent_id = 200
+# text = 雖然沒有見過面，但是我早把羊人當作我的好朋友；每次他出的食評我都第一時間觀看點like 和分享.
+like	NOUN
+
+# sent_id = 198
+# text = 如果香港人撐你嘅話，就會撐你到底好感動！ 香港人表面惡，但係好有義氣！Btw, 好鍾意呢個訪問，無故意搞笑，搞節目效果，好簡單嘅一個訪問，好睇！ 滿滿嘅感動！加油 to everyone!!!
+Btw	X
+everyone	PRON
+
+# sent_id = 217
+# text = 個BGM真係好洗腦
+BGM	NOUN
+
+# sent_id = 85
+# text = 香港人表示蓮香樓是賣情懷，同level六安居 好吃些
+level	NOUN
+
+# sent_id = 177
+# text = 13:41 鄭秀文按下dislike button
+dislike	ADJ
+
+# sent_id = 58
+# text = 之前去美容院KO啲毛毛，因為未堅持到定期去，毛毛又生粗佐嘥錢又嘥時間
+KO	X
+
+# sent_id = 282
+# text = 可以多d分享ootd嗎
+ootd	NOUN
+
+# sent_id = 273
+# text = 恭喜你呀Jenn, 好開心你搵到一個咁適合嘅終身伴侶，人真係一凹一凸，大家性格互補，我非常欣賞你老公個propose planning deck!! 期待未來繼續同你一齊分享更多你人生嘅體驗，幸福快樂
+Jenn	PROPN
+propose	VERB
+planning	NOUN
+deck	NOUN
+
+# sent_id = 165
+# text = 800港幣冇人答啱，以為答啱月球嗰班Nursing學生個反應好好笑
+Nursing	NOUN
+
+# sent_id = 71
+# text = 又重新睇過wwwwww
+wwwwww	X
+
+# sent_id = 256
+# text = 太耐無update 要投訴你, haha
+update	VERB
+haha	INTJ
+
+# sent_id = 120
+# text = 爹哋講廣東話有倪匡先生嘅feel
+feel	NOUN
+
+# sent_id = 250
+# text = 無去到GRADDIN 但都比個LIKE 你 ：P 但見到JENNN你好似咁平時笑番真係好3 KEEP GOING ！
+GRADDIN	PROPN
+LIKE	NOUN
+P	X
+JENNN	PROPN
+KEEPGOING	VERB
+
+# sent_id = 64
+# text = 全部都係賺你地facial同補品既錢去買 睇來食水唔少
+facial	NOUN
+
+# sent_id = 188
+# text = 我凈係去過一次，就係帶仔仔去玩上面個playhouse，嗰時兩年前同你條片嘅情況都係一樣
+playhouse	NOUN
+
+# sent_id = 138
+# text = 你功課做不夠，可以參考香港youtuber 的介紹，Kiki and May
+Kiki	PROPN
+youtuber	PROPN
+
+# sent_id = 45
+# text = 我係你超級fdz xdd
+fdz	X
+xdd	X
+
+# sent_id = 253
+# text = 自己一個係出面要小心啲呀????一直由六萬幾訂閱去到而家??一直都唔覺得你好做作??反而覺得你真係好真，好樂觀??繼續加油????support you??????
+support	VERB
+
+# sent_id = 157
+# text = 希望可以多拍外國大學的影片超棒der!
+der	X
+
+# sent_id = 19
+# text = 明明第一個map好地地
+map	NOUN
+
+# sent_id = 167
+# text = 7:54 我真係想答... Quit左佢囉 XDD
+Quit	VERB
+XDD	X
+
+# sent_id = 283
+# text = 可以分享連身裙link？
+link	NOUN
+
+# sent_id = 241
+# text = 你個fd每一個表情同眼神都好on point好fun
+fd	X
+point	NOUN
+fun	ADJ
+
+# sent_id = 181
+# text = 1000個support 呢個系列
+support	NOUN
+
+# sent_id = 70
+# text = omg 呢個setup
+omg	INTJ
+setup	NOUN
+
+# sent_id = 173
+# text = 頭兩題唔係小學常識題level咩？
+level	NOUN
+
+# sent_id = 55
+# text = 这副contact lenses太大了眼白都快找不到了
+contact	NOUN
+lenses	NOUN
+
+# sent_id = 92
+# text = 好期待十月第一次要去香港玩??張保仔號也太Chill 了吧
+Chill	ADJ
+
+# sent_id = 96
+# text = besides,今集個嘉賓都好cute
+besides	ADV
+cute	ADJ
+
+# sent_id = 43
+# text = 我想問小花，你的wig係邊買咖？：
+wig	NOUN
+
+# sent_id = 95
+# text = 真係好鍾意睇你嘅travel vlog
+travel	NOUN
+vlog	NOUN
+
+# sent_id = 215
+# text = 叻女！敬禮！Salute!
+Salute	VERB
+
+# sent_id = 164
+# text = 屌，竟然有人話月球，omg 仲話中大d人冇常識架
+omg	INTJ
+
+# sent_id = 261
+# text = 好jealous 冇push up都著得咁靚 身形勁fit
+jealous	ADJ
+push	VERB
+up	ADP
+
+# sent_id = 305
+# text = 好sweet ar 你們倆個
+sweet	ADJ
+ar	X
+
+# sent_id = 99
+# text = Bakehouse蛋撻的撻底是酸種Sourdough Eggs Tart
+Bakehouse	PROPN
+Sourdough	PROPN
+Eggs	PROPN
+Tart	PROPN
+
+# sent_id = 53
+# text = 好like你既性格
+like	VERB
+
+# sent_id = 296
+# text = 串燒店嗰度直接講普通話啦 已經有嗰種feel啦
+feel	NOUN
+
+# sent_id = 267
+# text = support you 見到你差D喊,真係好心痛 but cheer up the best is yet to come
+support	VERB
+cheer	VERB
+yet	ADV
+come	VERB
+
+# sent_id = 150
+# text = 果位讀數ge真心勁 見到佢ge答案我以為係讀語言學
+ge	X
+
+# sent_id = 118
+# text = 法国爸爸好可爱 香港妈妈真系好nice，女儿很漂亮，感谢你的视频分享，祝福你们
+nice	ADJ
+
+# sent_id = 24
+# text = 對我Professor死心塌地係我做過最好嘅投資
+Professor	PROPN
+
+# sent_id = 36
+# text = 你花了那麼多心機構思整段片， 出來的效果一點都沒有Hardsell的感覺，反而看得很輕鬆讚讚 超超鍾意你三個妝:-o
+Hardsell	PROPN
+
