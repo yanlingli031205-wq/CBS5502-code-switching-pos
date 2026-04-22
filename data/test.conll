@@ -133,7 +133,7 @@ expression	NOUN
 # sent_id = 303
 # text = 我系广东人，广东话唔系我嘅母语，anyway都学到宜家第5年啦，睇到深圳变成个捞佬地，广州东莞大把本地细佬仔唔使广东话，真系惊变成深圳咁，要learn埋香港人一样保护好广东话文化，多谢香港人企出黎保护呢个文化。support你地同apple
 anyway	ADV
-learn	NOUN
+learn	VERB
 support	VERB
 apple	PROPN
 

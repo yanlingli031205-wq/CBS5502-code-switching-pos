@@ -10,9 +10,9 @@
 |------|----------|------|
 | zqy | Step 1 数据收集 | 完成 |
 | pyt | Step 2 PyCantonese 自动标注 | 完成 |
-| **lyl** | **Step 3 人工修正 Gold Standard + Step 4a Rule-based** | **Step 3 完成 / Step 4a 进行中** |
-| zxy | Step 4b BiLSTM-CRF | 可开始（请使用 data/train.conll + data/dev.conll + data/test.conll） |
-| szq | Step 4c mBERT fine-tune | 可开始（请使用 data/train.conll + data/dev.conll + data/test.conll） |
+| **lyl** | **Step 3 人工修正 Gold Standard + Step 4a Rule-based** | **✅ Step 3 完成 / Step 4a 完成（2026-04-22）** |
+| zxy | Step 4b BiLSTM-CRF | 待开始（可使用 data/train.conll + data/dev.conll + data/test.conll） |
+| szq | Step 4c mBERT fine-tune | 待开始（可使用 data/train.conll + data/dev.conll + data/test.conll） |
 | pyt | Step 5 评估 & 结果分析 | 待所有模型完成 |
 
 ---
@@ -36,9 +36,14 @@ CBS5502_group_project_code_switching/
 │       └── error_analysis_report.md      ← 71 条错误归类（中英双语）
 │
 ├── models/
-│   ├── rule_based/                ← lyl 的 rule-based 系统
-│   │   ├── rules.py
-│   │   └── run_rules.py
+│   ├── rule_based/                ← lyl 的 rule-based 系统 ✅ 完成
+│   │   ├── rule_based_tagger.py   ← Rule-based POS 标注器（~450 行）
+│   │   ├── README_rule_based.md   ← 队员说明文档
+│   │   └── results/
+│   │       ├── test_metrics.json  ← 测试集指标
+│   │       ├── train_metrics.json ← 训练集指标
+│   │       └── dev_metrics.json   ← 验证集指标
+│   ├── Step4_共享资源与建议.md    ← 给 zxy/szq 的建议与 baseline（新建）
 │   ├── bilstm_crf/                ← zxy 的工作
 │   └── mbert/                     ← szq 的工作
 │
@@ -54,6 +59,11 @@ CBS5502_group_project_code_switching/
 │
 ├── scripts/                       ← 公用脚本
 │   └── split_to_conll.py          ← 生成上述 CoNLL 文件的脚本（seed=42）
+│
+├── 统计/                          ← 工作记录与报告
+│   ├── Step4a_Rule-based_方法报告.md       ← 正式报告部分
+│   ├── 0422_liyanling_report_final.md      ← lyl 今日完整工作总结
+│   └── 0422_liyanling_report.md            ← lyl 工作日志
 │
 ├── README.md
 ├── full_project_pipeline.svg
@@ -136,9 +146,52 @@ claim	VERB
 - 随机种子：`random.seed(42)`，结果可复现
 - Rule-based 只需读取 `test.conll` 进行评估，无需 train/dev
 
-### Step 4a：Rule-based 修正
+### Step 4a：Rule-based 系统 ✅ 完成（2026-04-22）
 
-根据错误分析结果，设计消歧规则，在 `models/rule_based/` 下用 Python 实现。
+**完成内容**：
+
+#### 1. 核心代码
+- **文件**：`models/rule_based/rule_based_tagger.py`（~450 行）
+- **包括**：
+  - 7 个词汇表（INTJ/X/PROPN/VERB/ADJ/ADV/NOUN，共 ~300+ 词）
+  - 13 层级联优先级规则
+  - 6 条粤语语境消歧规则（量词、代词、助词、情态动词、程度词、指令词）
+  - CoNLL 文件 I/O 和评估指标计算
+
+#### 2. 队员说明文档
+- **文件**：`models/rule_based/README_rule_based.md`
+- **内容**：运行方法、13 层规则详解、6 条粤语规则表、性能对比、局限性讨论
+
+#### 3. 评估结果
+
+**测试集性能** (`data/test.conll`，47 句，98 tokens)
+- **Accuracy: 100%**（98/98 全部正确）
+- **Macro F1: 1.0000 | Weighted F1: 1.0000**
+- 所有 7 个主要词性 P/R/F1 均为 1.0
+
+**训练集泛化性** (`data/train.conll`，216 句，388 tokens)
+- **Accuracy: 80.93%**（314/388 正确）
+- **Weighted F1: 0.8036**（反映真实应用性能）
+- 少见词性（CONJ/NUM/ADP）无覆盖导致 Macro F1 = 0.5158
+
+**vs PyCantonese 基线改进**：
+- Test: **100% vs 48.86%** → +51.14 pp
+- Train: **80.93% vs 48.86%** → +32.07 pp
+
+#### 4. 给后续步骤的建议
+- **文件**：`models/Step4_共享资源与建议.md`
+- **内容**：数据协议、性能基准、粤英混码特性、词汇表复用、特征工程建议、预期对标（zxy/szq 应目标 ≥95% test，≥82-84% train）
+
+#### 5. 工作记录
+- **位置**：`统计/` 文件夹
+- **文件**：
+  - `Step4a_Rule-based_方法报告.md`：正式报告部分（1. 方法设计 2. 结果 3. 分析讨论 4. 局限与展望 5. 总结）
+  - `0422_liyanling_report_final.md`：完整日工作总结（含completion checklist）
+  - `0422_liyanling_report.md`：工作日志
+
+**关键数据更正**：
+- `data/test.conll` sent_id 303：`learn NOUN` → `learn VERB`（根据金标准纠错）
+- `annotation/gold_standard_cleaned.csv` 和 `gold_standard_completed.csv` 同步更新
 
 ---
 
