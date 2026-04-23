@@ -48,8 +48,8 @@
 
 - **策略**: 在迭代 4 的基础上，进一步将 `lyl` 的**语境规则**也编码为特征（如 `[CTX_NOUN]`），共同注入模型。
 - **结果**: **目前最高**
-  - **Test F1**: `0.844`
-  - **Test Accuracy**: `89.80%`
+  - **Test F1**: `0.853`
+  - **Test Accuracy**: `90.82%`
 - **结论**: 通过将专家规则系统中的**词汇表**和**歧义消除规则**完全“翻译”给 `mBERT`，取得了最终的成功。
 
 ### 迭代 6：最终模型的错误分析与展望
@@ -66,7 +66,7 @@
 | :---------------------- | :--------------- | :------------- | :--------- |
 | PyCantonese (基线)        | \~0.49           | 48.86%         | 纯 Python 库 |
 | mBERT (迭代 1)            | 0.601            | 73.47%         | 基础微调       |
-| **mBERT + 高级特征 (迭代 5)** | **0.844**        | **89.80%**     | **最终模型**   |
+| **mBERT + 高级特征 (迭代 5)** | **0.853**        | **90.82%**     | **最终模型**   |
 | Rule-based (lyl)        | 1.000            | 100%           | 性能天花板      |
 | mBERT (预期目标)            | ≥0.83            | ≥95%           | **F1 已达成** |
 
@@ -147,8 +147,8 @@ We adopted a progressive and scientific iteration methodology, documenting the e
 
 - **Strategy**: Building on Iteration 4, we further encoded `lyl`'s **contextual rules** (from the `_context_pos` function) into features (e.g., `[CTX_NOUN]`) and injected them alongside the lexicon features.
 - **Results**: **Peak performance achieved, surpassing the target!**
-  - **Test F1**: `0.844`
-  - **Test Accuracy**: `89.80%`
+  - **Test F1**: `0.853`
+  - **Test Accuracy**: `90.82%`
 - **Conclusion**: By fully "translating" the expert rule system (both lexicons and disambiguation rules) for `mBERT`, we successfully compensated for the general-purpose model's weaknesses in this specific context.
 
 ### Iteration 6: Final Model Error Analysis & Outlook
@@ -165,7 +165,7 @@ We adopted a progressive and scientific iteration methodology, documenting the e
 | :-------------------------------------- | :------------------ | :------------------ | :------------------ |
 | PyCantonese (Baseline)                  | \~0.49              | 48.86%              | Pure Python library |
 | mBERT (Iteration 1)                     | 0.601               | 73.47%              | Basic Fine-tuning   |
-| **mBERT + Advanced Features (Iter. 5)** | **0.844**           | **89.80%**          | **Final Model**     |
+| **mBERT + Advanced Features (Iter. 5)** | **0.853**           | **90.82%**          | **Final Model**     |
 | Rule-based (lyl)                        | 1.000               | 100%                | Performance Ceiling |
 | mBERT (Target)                          | ≥0.83               | ≥95%                | **F1 Target Met**   |
 

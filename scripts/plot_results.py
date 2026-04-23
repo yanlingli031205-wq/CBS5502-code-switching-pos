@@ -12,8 +12,8 @@ def main():
         "mBERT + Advanced Feat.",
         "Rule-based (lyl)"
     ]
-    f1_scores = [0.49, 0.601, 0.827, 0.844, 1.0]
-    accuracy_scores = [0.4886, 0.7347, 0.8878, 0.8980, 1.0]
+    f1_scores = [0.49, 0.601, 0.827, 0.853, 1.0]
+    accuracy_scores = [0.4886, 0.7347, 0.8878, 0.9082, 1.0]
 
     # --- 2. 创建图表 ---
     x = np.arange(len(models))  # the label locations

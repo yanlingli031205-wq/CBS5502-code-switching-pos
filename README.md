@@ -227,7 +227,7 @@ claim	VERB
     **完成内容**：
     *   基于 `bert-base-multilingual-cased` 模型，对粤英混码语料进行词性标注微调。
     *   通过迭代实验，融合 `lyl` 提供的词汇表和语境规则进行特征工程，显著提升了模型性能。
-    *   最终模型在测试集上取得了 F1 分数 `0.844`，准确率 `89.80%`，成功达成 `lyl` 设定的 F1 目标。
+    *   最终模型在测试集上取得了 F1 分数 `0.853`，准确率 `90.82%`，成功达成 `lyl` 设定的 F1 目标。
 *   **详细报告**：[models/mbert/README_mBERT.md](models/mbert/README_mBERT.md)
 
 ## GitHub 项目建立流程
