@@ -21,9 +21,6 @@ __pycache__/
 .idea/
 
 # Model files and training outputs
-# Ignore all model weight files by extension
-*.bin
-*.pth
 
 # Ignore specific model output directories to avoid tracking any files inside
 models/mbert/mbert-advanced-features/
