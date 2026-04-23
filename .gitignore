@@ -1,0 +1,40 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IDE / Editor specific
+.vscode/
+.idea/
+
+# Model files and training outputs
+# Ignore all model weight files by extension
+*.bin
+*.pth
+
+# Ignore specific model output directories to avoid tracking any files inside
+models/mbert/mbert-advanced-features/
+models/mbert/mbert-with-features/
+models/mbert/xlm-roberta-model/
+models/mbert/test-ner-output/
+models/mbert/best-model/
+mbert-pos-tagger/
+
+# Ignore HuggingFace Trainer output directories from hyperparameter search
+hp-search-*/
+
+# macOS specific
+.DS_Store
