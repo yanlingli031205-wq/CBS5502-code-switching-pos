@@ -12,7 +12,8 @@
 | pyt | Step 2 PyCantonese 自动标注 | 完成 |
 | **lyl** | **Step 3 人工修正 Gold Standard + Step 4a Rule-based** | **✅ Step 3 完成 / Step 4a 完成（2026-04-22）** |
 | zxy | Step 4b BiLSTM-CRF | 待开始（可使用 data/train.conll + data/dev.conll + data/test.conll） |
-| szq | Step 4c mBERT fine-tune | 待开始（可使用 data/train.conll + data/dev.conll + data/test.conll） |
+| szq | Step 4c mBERT fine-tune | ✅ 完成（2026-04-23） |
+
 | pyt | Step 5 评估 & 结果分析 | 待所有模型完成 |
 
 ---
@@ -45,7 +46,8 @@ CBS5502_group_project_code_switching/
 │   │       └── dev_metrics.json   ← 验证集指标
 │   ├── Step4_共享资源与建议.md    ← 给 zxy/szq 的建议与 baseline（新建）
 │   ├── bilstm_crf/                ← zxy 的工作
-│   └── mbert/                     ← szq 的工作
+│   ├── mbert/                     ← szq 的工作
+│   │   └── README_mBERT.md        ← mBERT 模型训练与优化报告
 │
 ├── evaluation/                    ← pyt 的评估脚本和结果
 │
@@ -209,6 +211,25 @@ claim	VERB
 
 ---
 
+### szq 的具体任务
+
+### Step 4c：mBERT Fine-tune ✅ 已完成（2026-04-23）
+
+#### 工作记录
+- **位置**：`models/mbert/` 文件夹
+- **文件**：
+  - `README_mBERT.md`：mBERT 模型训练与优化报告 (szq)
+  - `train.py`：mBERT 基线和超参数搜索阶段的训练脚本
+  - `hyperparameter_search.py`：mBERT 学习率超参数搜索脚本
+  - `predict.py`：mBERT 错误分析脚本
+  - `train_with_advanced_features.py`：mBERT 融合高级特征的最终训练脚本
+
+    **完成内容**：
+    *   基于 `bert-base-multilingual-cased` 模型，对粤英混码语料进行词性标注微调。
+    *   通过迭代实验，融合 `lyl` 提供的词汇表和语境规则进行特征工程，显著提升了模型性能。
+    *   最终模型在测试集上取得了 F1 分数 `0.844`，准确率 `89.80%`，成功达成 `lyl` 设定的 F1 目标。
+*   **详细报告**：[models/mbert/README_mBERT.md](models/mbert/README_mBERT.md)
+
 ## GitHub 项目建立流程
 
 仓库地址：[https://github.com/yanlingli031205-wq/CBS5502-code-switching-pos](https://github.com/yanlingli031205-wq/CBS5502-code-switching-pos)
@@ -227,8 +248,6 @@ git clone https://github.com/yanlingli031205-wq/CBS5502-code-switching-pos.git
 git add .
 git commit -m "描述你做了什么，例如：add gold standard annotation"
 git push
-```
 
-### 邀请组员协作
 
-仓库页面 → Settings → Collaborators → Add people → 填入对方 GitHub 用户名
+
