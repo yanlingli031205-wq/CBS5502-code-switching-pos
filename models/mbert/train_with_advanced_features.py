@@ -138,6 +138,7 @@ def main():
         weight_decay=0.01,
         load_best_model_at_end=True,
         metric_for_best_model="f1",
+        save_total_limit=2,
     )
 
     data_collator = DataCollatorForTokenClassification(tokenizer)
