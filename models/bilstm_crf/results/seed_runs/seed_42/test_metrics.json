@@ -1,0 +1,50 @@
+{
+  "accuracy": 0.7449,
+  "macro_f1": 0.5131,
+  "weighted_f1": 0.731,
+  "per_label": {
+    "ADJ": {
+      "precision": 0.8571,
+      "recall": 0.6,
+      "f1": 0.7059,
+      "support": 10
+    },
+    "ADV": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 3
+    },
+    "INTJ": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1
+    },
+    "NOUN": {
+      "precision": 0.7826,
+      "recall": 0.9231,
+      "f1": 0.8471,
+      "support": 39
+    },
+    "PROPN": {
+      "precision": 0.5,
+      "recall": 0.6429,
+      "f1": 0.5625,
+      "support": 14
+    },
+    "VERB": {
+      "precision": 0.8095,
+      "recall": 0.8095,
+      "f1": 0.8095,
+      "support": 21
+    },
+    "X": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 10
+    }
+  },
+  "num_tokens": 98
+}
