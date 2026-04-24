@@ -11,7 +11,7 @@
 | zqy | Step 1 数据收集 | 完成 |
 | pyt | Step 2 PyCantonese 自动标注 | 完成 |
 | **lyl** | **Step 3 人工修正 Gold Standard + Step 4a Rule-based** | **✅ Step 3 完成 / Step 4a 完成（2026-04-22）** |
-| zxy | Step 4b BiLSTM-CRF | 待开始（可使用 data/train.conll + data/dev.conll + data/test.conll） |
+| zxy | Step 4b BiLSTM-CRF | ✅ 完成（2026-04-24） |
 | szq | Step 4c mBERT fine-tune | ✅ 完成（2026-04-23） |
 
 | pyt | Step 5 评估 & 结果分析 | 待所有模型完成 |
@@ -45,7 +45,16 @@ CBS5502_group_project_code_switching/
 │   │       ├── train_metrics.json ← 训练集指标
 │   │       └── dev_metrics.json   ← 验证集指标
 │   ├── Step4_共享资源与建议.md    ← 给 zxy/szq 的建议与 baseline（新建）
-│   ├── bilstm_crf/                ← zxy 的工作
+│   ├── bilstm_crf/                ← zxy 的 BiLSTM-CRF 系统 ✅ 完成（2026-04-24）
+│   │   ├── train_bilstm_crf.py    ← BiLSTM-CRF 主训练脚本（15维特征注入 + early stopping）
+│   │   ├── run_multi_seed.py      ← 5-seed 训练与多数表决 ensemble
+│   │   ├── plot_bilstm_crf_results.py ← Step 4 模型对比作图脚本
+│   │   ├── README_bilstm_crf.md   ← BiLSTM-CRF 详细实验记录与最终结果
+│   │   └── results/
+│   │       ├── best_model.pt      ← dev 最优单模型权重
+│   │       ├── ensemble_metrics.json ← 5-seed ensemble 最终指标
+│   │       ├── ensemble_test_pred.conll ← ensemble 测试集预测
+│   │       └── bilstm_crf_model_comparison.png ← 与 baseline/rule-based/mBERT 对比图
 │   ├── mbert/                     ← szq 的工作
 │   │   └── README_mBERT.md        ← mBERT 模型训练与优化报告
 │
@@ -208,6 +217,27 @@ claim	VERB
 **修复（v2）**：pyt 修改了数据清洗流程，引入 NER（命名实体识别）库，并设置 NER 结果强制优先，使命名实体（如人名、地名、品牌名等多词结构）能被完整切分和提取，不再出现漏词。修复后的文件即现版本 `corpus/english_tokens_copy.csv`。
 
 **对 lyl 工作的影响**：lyl 在 v1 表格中已自行补填了部分缺失 token（在对应列手动添加 token，`auto_pos` 填 `?`，`gold_pos` 填正确词性并黄色高亮标注）。v2 版本解决了该问题，后续不再需要手动补填。
+
+---
+
+### zxy 的具体任务
+
+### Step 4b：BiLSTM-CRF ✅ 已完成（2026-04-24）
+
+#### 工作记录
+- **位置**：`models/bilstm_crf/` 文件夹
+- **文件**：
+  - `README_bilstm_crf.md`：BiLSTM-CRF 模型训练与优化报告（zxy）
+  - `train_bilstm_crf.py`：BiLSTM-CRF 主训练脚本（词向量 + Char-BiLSTM + CRF）
+  - `run_multi_seed.py`：多随机种子训练与多数表决集成脚本
+  - `plot_bilstm_crf_results.py`：模型对比图生成脚本
+
+    **完成内容**：
+    *   基于统一 CoNLL 数据协议完成 BiLSTM-CRF 训练流程，并对齐 mBERT 的思路将 rule-based 知识作为可学习特征注入（词汇表、表面特征、语境特征，共 15 维）。
+    *   通过正则化调优（dropout/weight decay）和 early stopping 改善过拟合，确定最终超参组合。
+    *   实现 5-seed 训练与 majority-vote ensemble，提升小数据条件下的稳定性与最终表现。
+    *   最终在测试集达到 **Weighted F1 = 0.7913**、**Accuracy = 80.61%**（ensemble），单模型 best seed 为 **Weighted F1 = 0.7429**。
+*   **详细报告**：[models/bilstm_crf/README_bilstm_crf.md](models/bilstm_crf/README_bilstm_crf.md)
 
 ---
 
