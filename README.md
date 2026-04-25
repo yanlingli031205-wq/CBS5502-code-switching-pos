@@ -13,8 +13,7 @@
 | **lyl** | **Step 3 人工修正 Gold Standard + Step 4a Rule-based** | **✅ Step 3 完成 / Step 4a 完成（2026-04-22）** |
 | zxy | Step 4b BiLSTM-CRF | ✅ 完成（2026-04-24） |
 | szq | Step 4c mBERT fine-tune | ✅ 完成（2026-04-23） |
-
-| pyt | Step 5 评估 & 结果分析 | 待所有模型完成 |
+| pyt | Step 5 评估 & 结果分析 | ⏳ 待开始（所有模型已就绪） |
 
 ---
 
