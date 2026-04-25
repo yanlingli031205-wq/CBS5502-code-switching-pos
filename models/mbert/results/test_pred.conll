@@ -1,0 +1,145 @@
+miss [FEAT_VERB] VERB
+
+ball [FEAT_NOUN] NOUN
+outlet [FEAT_NOUN] NOUN
+center [FEAT_NOUN] NOUN
+hea [FEAT_X] X
+sport [FEAT_NOUN] NOUN
+
+love [FEAT_VERB] [CTX_VERB] VERB
+
+up [FEAT_VERB] VERB
+
+Aunty [FEAT_NOUN] PROPN
+Singapore [FEAT_PROPN] PROPN
+
+XDDDDD X
+
+really [FEAT_ADV] ADJ
+made [FEAT_VERB] VERB
+day [FEAT_NOUN] NOUN
+
+apple [FEAT_PROPN] PROPN
+watch [FEAT_PROPN] PROPN
+
+dirty [FEAT_ADJ] ADJ
+
+heart [FEAT_NOUN] NOUN
+UFO PROPN
+
+Delay [FEAT_VERB] VERB
+
+Food PROPN
+Court VERB
+Like [FEAT_VERB] [CTX_NOUN] VERB
+
+Compare [FEAT_VERB] VERB
+
+intro [FEAT_NOUN] NOUN
+
+Grace [FEAT_PROPN] PROPN
+follow [FEAT_VERB] [FEAT_NOUN] [CTX_VERB] VERB
+channel [FEAT_NOUN] NOUN
+
+LOR [FEAT_X] X
+programmer [FEAT_NOUN] NOUN
+
+mami [FEAT_NOUN] NOUN
+
+picotin [FEAT_NOUN] PROPN
+brand [FEAT_NOUN] NOUN
+cheap [FEAT_ADJ] ADJ
+
+colour [FEAT_NOUN] NOUN
+
+sad [FEAT_ADJ] ADJ
+
+ABC PROPN
+BBC PROPN
+CBC PROPN
+
+Btw [FEAT_X] X
+Anyway [FEAT_ADV] ADJ
+
+App [FEAT_NOUN] NOUN
+banner [FEAT_NOUN] NOUN
+
+booking [FEAT_NOUN] NOUN
+
+share [FEAT_VERB] [CTX_VERB] VERB
+view [FEAT_NOUN] NOUN
+
+warm [FEAT_ADJ] ADJ
+
+speech [FEAT_NOUN] NOUN
+way [FEAT_NOUN] NOUN
+facial [FEAT_ADJ] ADJ
+expression [FEAT_NOUN] NOUN
+
+anyway [FEAT_ADV] VERB
+learn [FEAT_VERB] VERB
+support [FEAT_VERB] [FEAT_NOUN] [CTX_VERB] VERB
+apple [FEAT_PROPN] PROPN
+
+google [FEAT_PROPN] PROPN
+map [FEAT_NOUN] NOUN
+comment [FEAT_NOUN] NOUN
+la [FEAT_X] X
+etc [FEAT_X] X
+fans [FEAT_NOUN] NOUN
+
+post [FEAT_VERB] [CTX_VERB] VERB
+video [FEAT_NOUN] NOUN
+lip [FEAT_NOUN] NOUN
+stick [FEAT_NOUN] NOUN
+
+story [FEAT_NOUN] NOUN
+repost [FEAT_VERB] VERB
+
+Jenn [FEAT_PROPN] PROPN
+keep [FEAT_VERB] VERB
+fit [FEAT_ADJ] ADJ
+
+Dad [FEAT_NOUN] NOUN
+Bonus [FEAT_NOUN] NOUN
+points VERB
+knowing [FEAT_VERB] VERB
+use [FEAT_VERB] VERB
+
+chicken [FEAT_NOUN] NOUN
+
+DingDing [FEAT_X] X
+
+call [FEAT_VERB] VERB
+
+app [FEAT_NOUN] NOUN
+chur [FEAT_ADJ] ADJ
+register [FEAT_VERB] VERB
+
+Hilary [FEAT_PROPN] PROPN
+Like [FEAT_VERB] [CTX_VERB] VERB
+
+XDDD X
+FD [FEAT_X] X
+COS [FEAT_X] X
+
+foundation [FEAT_NOUN] NOUN
+
+point [FEAT_VERB] [FEAT_NOUN] VERB
+
+wah [FEAT_INTJ] X
+
+Uncle [FEAT_NOUN] NOUN
+
+TRUE [FEAT_ADJ] ADJ
+enjoy [FEAT_VERB] VERB
+
+chill [FEAT_ADJ] ADJ
+
+different [FEAT_ADJ] ADJ
+offers ADJ
+
+video [FEAT_NOUN] NOUN
+thanks [FEAT_VERB] VERB
+sharing [FEAT_NOUN] NOUN
+

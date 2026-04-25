@@ -130,13 +130,14 @@ def main():
     args = TrainingArguments(
         output_dir=output_dir,
         evaluation_strategy="epoch",
-        save_strategy="epoch", # 按您的要求，保存每一代
-        learning_rate=2e-5, 
-        per_device_train_batch_size=16,
-        per_device_eval_batch_size=16,
-        num_train_epochs=10,
+        save_strategy="no", # 按您的要求，保存每一代
+        learning_rate=1e-5, 
+        per_device_train_batch_size=8,
+        per_device_eval_batch_size=8,
+        gradient_accumulation_steps=2,
+        num_train_epochs=15,
         weight_decay=0.01,
-        load_best_model_at_end=True,
+        load_best_model_at_end=False,
         metric_for_best_model="f1",
         save_total_limit=2,
     )
