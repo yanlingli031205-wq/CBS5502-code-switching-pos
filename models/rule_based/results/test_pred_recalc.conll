@@ -1,0 +1,239 @@
+# sent_id = 100
+# text = 煲仔飯有吃飯焦嗎？怕你miss了
+miss	VERB
+
+# sent_id = 187
+# text = 變做亞洲最大體育城，租滑雪場/羽毛球場/籃球場/5人足球場/ 攀岩/ 射箭 / 乜ball物ball，吸多d唔同類型既運動鋪(唔係垃圾outlet)，底層做個大型單車center+餐廳，好似島波海道咁，一年365日都爆啦。而且喺機場附近實好多外國人有興趣黎參觀or hea時間。 淨係講滑雪啦，想練下野都要嘥3個中翻廣州，玩普通sport 就要幫襯炒場狗，羅局長幫下忙啦
+ball	NOUN
+outlet	NOUN
+center	NOUN
+hea	X
+sport	NOUN
+
+# sent_id = 152
+# text = 拍多d類似影片 love it!!
+love	VERB
+
+# sent_id = 42
+# text = 好令女,拍得好好:) 加油丫,up多d片啦;)
+up	VERB
+
+# sent_id = 195
+# text = 最后这个Singapore Aunty，我真的非常非常非常感谢她，真的激励了我！！！
+Aunty	NOUN
+Singapore	PROPN
+
+# sent_id = 65
+# text = 兩小隻跑去找把拔說把拔給錢我直接笑出聲XDDDDD
+XDDDDD	X
+
+# sent_id = 237
+# text = 看到你們really made our day!
+really	ADV
+made	VERB
+day	NOUN
+
+# sent_id = 23
+# text = 我心諗你嗰隻係apple watch 點打開
+apple	PROPN
+watch	PROPN
+
+# sent_id = 137
+# text = 你吃泰國粉時, 隔離的男士好dirty, 抓頭髮抓背抓肩手, 怕你吃了他的頭屑
+dirty	ADJ
+
+# sent_id = 178
+# text = 再見UFO 你千祈唔好錯過呀。我們不是什麼我未睇，但我一定會睇，肯自己揼錢拍自己想拍嘅題材嘅導演，喺香港有幾多個？佢真係好有火，好有heart，一定要支持
+heart	NOUN
+UFO	PROPN
+
+# sent_id = 185
+# text = 多謝政府同機管局，要求人哋同步開，但自己就慣性Delay，咪搞到咁囉
+Delay	VERB
+
+# sent_id = 51
+# text = 帶住台灣人嚟深水埗消費老化，買嗰十蚊嘢飲就老奉拎兩盒只限外賣嘅飯去 Food Court 黐冷氣霸位，呢種唔係窮遊係厚面皮；如果你哋真係肯踎街邊或者去公園食，我先至會畀一百個 Like 讚你哋夠地道兼識入鄉隨俗！
+Food	PROPN
+Court	PROPN
+Like	NOUN
+
+# sent_id = 196
+# text = 托哥，不如你去中環都做同樣一輯主題，Compare下睇下點
+Compare	VERB
+
+# sent_id = 298
+# text = 未睇完個intro就已經覺得個肚好唔舒服
+intro	NOUN
+
+# sent_id = 304
+# text = 講得好好啊Grace!之前都有follow你channel !希望更多人認識你
+Grace	PROPN
+follow	VERB
+channel	NOUN
+
+# sent_id = 174
+# text = 我成日見到有人講："呢D野唔識.有咩所謂.我又唔係讀呢科.又唔係靠呢樣知識搵食"，或者話："唔使咁博學"，好心啦.無常識就無常識.唔好咁多藉口.最多承認自己唔識LOR.如果下下都話唔係靠呢樣知識搵食，咁其實大家唔使讀咁多書.六歲入小學已經可以選擇自己想做咩職業先讀.例如我想做programmer，小學就唔使學咩叫昆蟲，太陽系有幾多個星球，只學數學同邏輯就夠。我想做醫生，就算讀到中學都唔知邊個係秦始皇同亞歷山大大帝。我想做作家，就連一個立體既體積都唔使學點計。總係好多人講："你話呢D係常識者.點去定義呢D係常識".總之就係有班人有千萬個理由話比人知唔識係應該
+LOR	X
+programmer	NOUN
+
+# sent_id = 112
+# text = 我mami 係菲律賓人，佢以前睇電視學，而且屋企係講廣東話，所以mami而家講得好流利。
+mami	NOUN
+
+# sent_id = 81
+# text = 我買咗一隻手鈪已經有個picotin見你搞到個brand cheap晒，早知唔開嚟睇！
+picotin	NOUN
+brand	NOUN
+cheap	ADJ
+
+# sent_id = 287
+# text = 係呢類睇洛自然少少既colour con
+colour	NOUN
+
+# sent_id = 176
+# text = 因為好少空檔，為咗睇最新中東嗰集，諗住返煲前情提要，啱啱重溫完油王遊香港嗰集，準備開波中東主題新集，先至發現竟然冇咗條片。好sad
+sad	ADJ
+
+# sent_id = 301
+# text = 勁過好多ABC，BBC，CBC等。
+ABC	PROPN
+BBC	PROPN
+CBC	PROPN
+
+# sent_id = 83
+# text = 電車之所以被香港人稱作叮叮(不是叮叮"車", 正如我去台北坐 55688, 我不會說去坐 "55688車" 一樣的道理 ), 是因為早年電車司機在過馬路或提醒行人時會拉動鈴鐺，發出清脆的叮叮聲，久而久之，香港人便親切地將電車稱為叮叮, 並不是關什麼 "叮叮糖"的原因, 還有那個糖本身叫做"啄啄糖", 不是叮叮糖, 全個故事都是亂編... Btw, 你們吃的是蛋撻還是葡撻? Anyway, 你們的影片拍得非常好, 高質, 氣氛不錯, 多謝你們唱好香港
+Btw	X
+Anyway	ADV
+
+# sent_id = 4
+# text = 最仆街開親麥記App幾個banner都見到佢
+App	NOUN
+banner	NOUN
+
+# sent_id = 144
+# text = 影片中你們住宿夏利酒店是3人一間房嗎？因為我訂booking都只有2人。
+booking	NOUN
+
+# sent_id = 231
+# text = 幫手share出去 夠十萬view我下次再去秘魯表演食飛機場
+share	VERB
+view	NOUN
+
+# sent_id = 114
+# text = 妳哋彼此很有愛，很warm
+warm	ADJ
+
+# sent_id = 216
+# text = 好正，speech way，facial expression都變得廣東化，真香港人
+speech	NOUN
+way	NOUN
+facial	ADJ
+expression	NOUN
+
+# sent_id = 303
+# text = 我系广东人，广东话唔系我嘅母语，anyway都学到宜家第5年啦，睇到深圳变成个捞佬地，广州东莞大把本地细佬仔唔使广东话，真系惊变成深圳咁，要learn埋香港人一样保护好广东话文化，多谢香港人企出黎保护呢个文化。support你地同apple
+anyway	ADV
+learn	VERB
+support	VERB
+apple	PROPN
+
+# sent_id = 103
+# text = 除咗小食之外 ，港幣200至500蚊嘅餐廳都好多好食 性價比高嘅， (米芝蓮) or google map睇comment la， 越南，泰國， 日本，法國，意大利...etc, 當然，食完就要努力做返多啲運動呀 香港fans
+google	PROPN
+map	NOUN
+comment	NOUN
+la	X
+etc	X
+fans	NOUN
+
+# sent_id = 289
+# text = 可以post下你講嘅果個video嗎? 我想知脂肪同你支lip stick
+post	VERB
+video	NOUN
+lip	NOUN
+stick	NOUN
+
+# sent_id = 14
+# text = 大日子會repost story加上黃藍都用到嘅字句
+story	NOUN
+repost	VERB
+
+# sent_id = 260
+# text = Jenn可唔可以講下點樣keep得咁fit
+Jenn	PROPN
+keep	VERB
+fit	ADJ
+
+# sent_id = 121
+# text = Bonus points to Dad for knowing when to use 唔緊要.
+Dad	NOUN
+Bonus	NOUN
+points	NOUN
+knowing	VERB
+use	VERB
+
+# sent_id = 113
+# text = 而家佢識講廣東話國語，住左台灣已經15年，但同你爹哋一樣，都仲系接受吾到chicken feet
+chicken	NOUN
+
+# sent_id = 49
+# text = DingDing! 睇你其他片知道你好高啊! 有無啲增高方法? For青春期少女?
+DingDing	X
+
+# sent_id = 16
+# text = 你喺度做緊乜？點解唔call我？
+call	VERB
+
+# sent_id = 17
+# text = 呢個app真係好chur，仲要register。
+app	NOUN
+chur	ADJ
+register	VERB
+
+# sent_id = 218
+# text = 有Hilary就要Like! 係英國定香港都咁靚！
+Hilary	PROPN
+Like	VERB
+
+# sent_id = 46
+# text = 好可愛, 我個FD要出COS, 都係睇住你呢段片黎化XDDD
+XDDD	X
+FD	X
+COS	X
+
+# sent_id = 281
+# text = 個foundation好正啊！好想要
+foundation	NOUN
+
+# sent_id = 54
+# text = 霓虹妹的point 下睫毛，眉毛颜色还是太深
+point	VERB
+
+# sent_id = 73
+# text = wah 真係好靚
+wah	INTJ
+
+# sent_id = 116
+# text = Uncle講得好好, 好可愛,
+Uncle	NOUN
+
+# sent_id = 127
+# text = 好true，好認真，好上進，又好enjoy既女仔！
+TRUE	ADJ
+enjoy	VERB
+
+# sent_id = 142
+# text = 這個組合也好好看，是小確幸小chill的姐妹組合
+chill	ADJ
+
+# sent_id = 13
+# text = 罵地勤根本沒有用，因為要因應different offers 而擬定不同賠償，當時根本不可能
+different	ADJ
+offers	NOUN
+
+# sent_id = 59
+# text = 好鍾意睇呢類嘅video, thanks for sharing!!
+video	NOUN
+thanks	VERB
+sharing	NOUN
+
