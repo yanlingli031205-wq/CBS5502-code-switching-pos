@@ -8,8 +8,8 @@
 <!-- STEP 1 -->
 <g style="fill:rgb(0,0,0);stroke:none;font-family:-apple-system,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
   <rect x="40" y="20" width="600" height="56" rx="8" style="fill:rgb(68,68,65);stroke:rgb(180,178,169);stroke-width:0.5px;"/>
-  <text x="60" y="43" dominant-baseline="central" style="fill:rgb(211,209,199);stroke:none;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:central">Step 1 — 数据收集</text>
-  <text x="60" y="62" dominant-baseline="central" style="fill:rgb(180,178,169);stroke:none;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:central">300条粤英混码评论（LIHKG / 小红书 / YouTube留言）</text>
+  <text x="60" y="43" dominant-baseline="central" style="fill:rgb(211,209,199);stroke:none;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:central">Step 1 — Data Collection</text>
+  <text x="60" y="62" dominant-baseline="central" style="fill:rgb(180,178,169);stroke:none;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:central">300 Cantonese-English mixed comments (LIHKG / Xiaohongshu / YouTube)</text>
 </g>
 
 <line x1="340" y1="76" x2="340" y2="100" marker-end="url(#arrow)" style="fill:none;stroke:rgb(156,154,146);stroke-width:1.5px;"/>
@@ -17,8 +17,8 @@
 <!-- STEP 2 -->
 <g style="font-family:-apple-system,&quot;Segoe UI&quot;,sans-serif;">
   <rect x="40" y="102" width="600" height="56" rx="8" style="fill:rgb(60,52,137);stroke:rgb(175,169,236);stroke-width:0.5px;"/>
-  <text x="60" y="125" dominant-baseline="central" style="fill:rgb(206,203,246);stroke:none;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:central">Step 2 — 人工标注（Gold Standard）</text>
-  <text x="60" y="144" dominant-baseline="central" style="fill:rgb(175,169,236);stroke:none;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:central">每个英文 token 标上正确 POS（NOUN / VERB / ADJ / ADV…）</text>
+  <text x="60" y="125" dominant-baseline="central" style="fill:rgb(206,203,246);stroke:none;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:central">Step 2 — Manual Annotation (Gold Standard)</text>
+  <text x="60" y="144" dominant-baseline="central" style="fill:rgb(175,169,236);stroke:none;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:central">Each English token labelled with gold-standard POS (NOUN / VERB / ADJ / ADV…)</text>
 </g>
 
 <line x1="340" y1="158" x2="340" y2="182" marker-end="url(#arrow)" style="fill:none;stroke:rgb(156,154,146);stroke-width:1.5px;"/>
@@ -26,29 +26,29 @@
 <!-- STEP 3 -->
 <g style="font-family:-apple-system,&quot;Segoe UI&quot;,sans-serif;">
   <rect x="40" y="184" width="600" height="56" rx="8" style="fill:rgb(12,68,124);stroke:rgb(133,183,235);stroke-width:0.5px;"/>
-  <text x="60" y="207" dominant-baseline="central" style="fill:rgb(181,212,244);stroke:none;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:central">Step 3 — PyCantonese 初步标注（Baseline）</text>
-  <text x="60" y="226" dominant-baseline="central" style="fill:rgb(133,183,235);stroke:none;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:central">pc.pos_tag() 跑全部 335 句，记录英文词标注结果 → 找出错误案例</text>
+  <text x="60" y="207" dominant-baseline="central" style="fill:rgb(181,212,244);stroke:none;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:central">Step 3 — PyCantonese Initial Tagging (Baseline)</text>
+  <text x="60" y="226" dominant-baseline="central" style="fill:rgb(133,183,235);stroke:none;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:central">Run pc.pos_tag() on 335 sentences; record output → identify error patterns</text>
 </g>
 
 <line x1="340" y1="240" x2="340" y2="264" marker-end="url(#arrow)" style="fill:none;stroke:rgb(156,154,146);stroke-width:1.5px;"/>
 
 <!-- STEP 4a Rule-based -->
 <rect x="40" y="266" width="193" height="90" rx="8" style="fill:rgb(99,56,6);stroke:rgb(239,159,39);stroke-width:0.5px;"/>
-<text x="60" y="288" dominant-baseline="central" style="fill:rgb(250,199,117);stroke:none;font-size:13px;font-weight:500;font-family:-apple-system,sans-serif;">Step 4a — 规则修正层</text>
-<text x="60" y="310" style="fill:rgb(239,159,39);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">分析错误模式 → 手写消歧规则</text>
-<text x="60" y="326" style="fill:rgb(239,159,39);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">模态词 + EN → VERB 等</text>
+<text x="60" y="288" dominant-baseline="central" style="fill:rgb(250,199,117);stroke:none;font-size:13px;font-weight:500;font-family:-apple-system,sans-serif;">Step 4a — Rule-based Layer</text>
+<text x="60" y="310" style="fill:rgb(239,159,39);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Analyse error patterns</text>
+<text x="60" y="326" style="fill:rgb(239,159,39);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Hand-craft disambiguation rules</text>
 
 <!-- STEP 4b BiLSTM-CRF -->
 <rect x="243" y="266" width="193" height="90" rx="8" style="fill:rgb(113,43,19);stroke:rgb(240,153,123);stroke-width:0.5px;"/>
 <text x="263" y="288" dominant-baseline="central" style="fill:rgb(245,196,179);stroke:none;font-size:13px;font-weight:500;font-family:-apple-system,sans-serif;">Step 4b — BiLSTM-CRF</text>
-<text x="263" y="310" style="fill:rgb(240,153,123);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">双向LSTM捕捉上下文依存</text>
-<text x="263" y="326" style="fill:rgb(240,153,123);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">CRF 层保证序列合法</text>
+<text x="263" y="310" style="fill:rgb(240,153,123);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Bidirectional context encoding</text>
+<text x="263" y="326" style="fill:rgb(240,153,123);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">CRF enforces valid sequences</text>
 
 <!-- STEP 4c mBERT -->
 <rect x="446" y="266" width="194" height="90" rx="8" style="fill:rgb(23,52,4);stroke:rgb(151,196,89);stroke-width:0.5px;"/>
-<text x="466" y="288" dominant-baseline="central" style="fill:rgb(192,225,150);stroke:none;font-size:13px;font-weight:500;font-family:-apple-system,sans-serif;">Step 4c — mBERT 微调</text>
-<text x="466" y="310" style="fill:rgb(151,196,89);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">多语言预训练 BERT 模型</text>
-<text x="466" y="326" style="fill:rgb(151,196,89);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">处理 subword 对齐</text>
+<text x="466" y="288" dominant-baseline="central" style="fill:rgb(192,225,150);stroke:none;font-size:13px;font-weight:500;font-family:-apple-system,sans-serif;">Step 4c — mBERT</text>
+<text x="466" y="310" style="fill:rgb(151,196,89);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Fine-tune multilingual BERT</text>
+<text x="466" y="326" style="fill:rgb(151,196,89);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">BertForTokenClassification</text>
 
 <!-- Converging arrows from parallel blocks to eval -->
 <line x1="136" y1="356" x2="300" y2="374" marker-end="url(#arrow)" style="fill:none;stroke:rgb(156,154,146);stroke-width:1.5px;"/>
@@ -57,30 +57,30 @@
 
 <!-- STEP 5 Evaluation -->
 <rect x="40" y="376" width="600" height="68" rx="8" style="fill:rgb(8,80,65);stroke:rgb(93,202,165);stroke-width:0.5px;"/>
-<text x="60" y="399" dominant-baseline="central" style="fill:rgb(159,225,203);stroke:none;font-size:14px;font-weight:500;font-family:-apple-system,sans-serif;">Step 5 — 评估 &amp; 比较（四系统对比）</text>
-<text x="60" y="418" style="fill:rgb(93,202,165);stroke:none;font-size:12px;font-family:-apple-system,sans-serif;">Baseline vs 规则层 vs BiLSTM-CRF vs mBERT</text>
-<text x="60" y="434" style="fill:rgb(93,202,165);stroke:none;font-size:12px;font-family:-apple-system,sans-serif;">指标：Accuracy / Precision / Recall / F1（per-class）</text>
+<text x="60" y="399" dominant-baseline="central" style="fill:rgb(159,225,203);stroke:none;font-size:14px;font-weight:500;font-family:-apple-system,sans-serif;">Step 5 — Evaluation &amp; Comparison (Four-way)</text>
+<text x="60" y="418" style="fill:rgb(93,202,165);stroke:none;font-size:12px;font-family:-apple-system,sans-serif;">Baseline vs Rule-based vs BiLSTM-CRF vs mBERT</text>
+<text x="60" y="434" style="fill:rgb(93,202,165);stroke:none;font-size:12px;font-family:-apple-system,sans-serif;">Metrics: Accuracy / Precision / Recall / F1 (per-class)</text>
 
 <!-- Four comparison boxes -->
 <rect x="40" y="460" width="143" height="70" rx="8" style="fill:none;stroke:rgba(222,220,209,0.15);stroke-width:0.5px;"/>
 <text x="111" y="481" text-anchor="middle" style="fill:rgb(250,249,245);stroke:none;font-size:13px;font-weight:500;font-family:-apple-system,sans-serif;">PyCantonese</text>
 <text x="111" y="498" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Baseline</text>
-<text x="111" y="514" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">英文词歧义多</text>
+<text x="111" y="514" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">High EN word ambiguity</text>
 
 <rect x="189" y="460" width="143" height="70" rx="8" style="fill:none;stroke:rgba(222,220,209,0.15);stroke-width:0.5px;"/>
-<text x="260" y="481" text-anchor="middle" style="fill:rgb(250,249,245);stroke:none;font-size:13px;font-weight:500;font-family:-apple-system,sans-serif;">+ 规则层</text>
+<text x="260" y="481" text-anchor="middle" style="fill:rgb(250,249,245);stroke:none;font-size:13px;font-weight:500;font-family:-apple-system,sans-serif;">+ Rule-based Layer</text>
 <text x="260" y="498" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Rule-based patch</text>
-<text x="260" y="514" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">覆盖不全是局限</text>
+<text x="260" y="514" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Limited coverage</text>
 
 <rect x="338" y="460" width="143" height="70" rx="8" style="fill:none;stroke:rgba(222,220,209,0.15);stroke-width:0.5px;"/>
 <text x="409" y="481" text-anchor="middle" style="fill:rgb(250,249,245);stroke:none;font-size:13px;font-weight:500;font-family:-apple-system,sans-serif;">BiLSTM-CRF</text>
-<text x="409" y="498" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">深度学习</text>
-<text x="409" y="514" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">捕捉长距离依存</text>
+<text x="409" y="498" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Deep learning</text>
+<text x="409" y="514" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Long-range dependencies</text>
 
 <rect x="487" y="460" width="153" height="70" rx="8" style="fill:none;stroke:rgba(222,220,209,0.15);stroke-width:0.5px;"/>
 <text x="563" y="481" text-anchor="middle" style="fill:rgb(250,249,245);stroke:none;font-size:13px;font-weight:500;font-family:-apple-system,sans-serif;">mBERT</text>
-<text x="563" y="498" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">多语言预训练</text>
-<text x="563" y="514" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">预计最高 F1</text>
+<text x="563" y="498" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Multilingual pre-trained</text>
+<text x="563" y="514" text-anchor="middle" style="fill:rgb(194,192,182);stroke:none;font-size:11px;font-family:-apple-system,sans-serif;">Highest F1 expected</text>
 
 <!-- Arrows from eval to comparison boxes -->
 <line x1="200" y1="444" x2="111" y2="458" marker-end="url(#arrow)" style="fill:none;stroke:rgb(156,154,146);stroke-width:1.5px;"/>
@@ -90,7 +90,7 @@
 
 <!-- Report mapping -->
 <rect x="40" y="548" width="600" height="110" rx="8" style="fill:none;stroke:rgba(222,220,209,0.15);stroke-width:0.5px;"/>
-<text x="340" y="572" text-anchor="middle" style="fill:rgb(250,249,245);stroke:none;font-size:14px;font-weight:500;font-family:-apple-system,sans-serif;">对应 Report 章节</text>
+<text x="340" y="572" text-anchor="middle" style="fill:rgb(250,249,245);stroke:none;font-size:14px;font-weight:500;font-family:-apple-system,sans-serif;">Report Section Mapping</text>
 <line x1="50" y1="580" x2="630" y2="580" style="fill:none;stroke:rgba(222,220,209,0.15);stroke-width:0.5px;"/>
 <text x="55" y="600" style="fill:rgb(194,192,182);stroke:none;font-size:12px;font-family:-apple-system,sans-serif;">Step 1–2   →  Ambiguity Statement + Dataset Description</text>
 <text x="55" y="618" style="fill:rgb(194,192,182);stroke:none;font-size:12px;font-family:-apple-system,sans-serif;">Step 3     →  Linguistic Foundations + Baseline Analysis</text>
