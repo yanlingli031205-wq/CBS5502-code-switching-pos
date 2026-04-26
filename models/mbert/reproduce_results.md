@@ -1,4 +1,5 @@
-#
+
+# Table 1: Overall Performance Evaluation
 
 | System               |  Accuracy | Precision |   Recall  |     F1    |
 | :------------------- | :-------: | :-------: | :-------: | :-------: |
@@ -7,9 +8,9 @@
 | BiLSTM-CRF           |   0.806   |   0.599   |   0.709   |   0.572   |
 | **mBERT fine-tune**  | **0.908** | **0.849** | **0.816** | **0.853** |
 
-### 表 2：定性分析预测结果
+### Table 2: Qualitative Analysis of Prediction Results
 
-我们使用最终训练好的 mBERT 模型对指定的三个例子进行了预测，结果如下：
+We used the final trained mBERT model to predict the three specified examples, with the following results:
 
 | Sentence                     | Word   | Gold | PyCantonese | BiLSTM | **mBERT** |
 | :--------------------------- | :----- | :--- | :---------: | :----: | :-------: |
@@ -17,7 +18,4 @@
 | ...你们 *really* made our day! | really | ADV  |     NOUN    |  VERB  | **PROPN** |
 | ...一百個 *Like* 讚你哋...         | Like   | NOUN |    PROPN    |  VERB  | **PROPN** |
 
-**分析**: `mBERT` 正确预测了 `miss`，但将 `really` 和 `Like` 错误地识别为了专有名词（PROPN），这与 `README` 中关于模型难以区分名词和专有名词的结论一致。
-
-##
-
+**Analysis**: `mBERT` correctly predicted `miss`, but incorrectly identified `really` and `Like` as proper nouns (PROPN). This is consistent with the conclusion in the `README` that the model has difficulty distinguishing between nouns and proper nouns.
