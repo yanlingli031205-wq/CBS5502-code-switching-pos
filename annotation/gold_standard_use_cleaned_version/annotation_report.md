@@ -1,3 +1,102 @@
+# English Version
+
+# Gold Standard Annotation Report
+
+## Data Overview
+
+| Item | Value |
+|------|------|
+|Total number of sentences | 335 |
+| Total number of English tokens (including `/`) | 623 |
+| The number of tokens marked `/` | 27 |
+| `/` Proportion (token level) | 4.33% |
+
+> **Explanation**: `/` means that PyCantonese fails to recognize the English token, that is, the word is completely missing in the automatic annotation.
+
+---
+
+## Cleaning Instructions
+
+Remove sentences containing any `/` mark (25 sentences in total) and get `gold_standard_cleaned.csv`:
+
+| Project | Before Cleaning | After Cleaning |
+|------|--------|--------|
+| Number of sentences | 335 | 310 |
+| English token number | 596 | 569 |
+
+---
+
+## PyCantonese automatic annotation accuracy rate
+
+### Before cleaning (including all evaluable tokens, excluding `/`)
+
+| Item | Value |
+|------|------|
+| Number of evaluable tokens | 596 |
+| Mark the correct number | 288 |
+| Number of annotation errors | 308 |
+| **Correct rate** | **48.32%** |
+
+### After cleaning (gold_standard_cleaned.csv)
+
+| Item | Value |
+|------|------|
+| Number of evaluable tokens | 569 |
+| Mark the correct number | 278 |
+| Number of annotation errors | 291 |
+| **Correct rate** | **48.86%** |
+
+---
+
+## Improvements and limitations introduced by NER
+
+pyt introduced spaCy NER in the v2 version, which is significantly improved compared to the early pure PyCantonese version:
+
+**Improvements:**
+- The v1 version cannot recognize multiple consecutive English words (such as `Elon Musk`, `Donald Trump`, `final fantasy`), only the first word is marked, and subsequent words are not extracted.
+- After the introduction of NER in v2, multi-word entities can be fully recognized and marked as `PROPN`, and the recognition accuracy of proper nouns such as `Elon Musk`, `BBC`, `Iron Man` and so on has been significantly improved.
+
+**Remaining limitations:**
+- The NER priority strategy will misjudge some common English words as entities and over-annotate them as `PROPN` (such as `facial`, `fans`, `feel`, `Delay`, etc.)
+- This is the direction in which the three methods of rule-based / BiLSTM-CRF / mBERT need to be improved in this project
+
+---
+
+## Main findings
+
+The accuracy rate of PyCantonese's English part-of-speech tagging on the Cantonese-English code-switching corpus is only about **48.86%**, which is close to the random level. The main error types include:
+
+| Error types | Typical cases |
+|---------|---------|
+| `VERB_as_PROPN` | Delay, Quit, compare, like, share |
+| `ADJ_as_PROPN` | Huge, Dramatic, Chill |
+| `INTJ_as_PROPN` | haha, lol, omg |
+| `X_as_PROPN` | btw, XDD, anyway |
+| `NOUN_as_PROPN` | facial, fans, feel, BGM, MC, MV |
+| `VERB_as_NOUN` | follow, love, point, cam, channel |
+| `ADJ_as_NOUN` | gorgeous, native |
+| `ADV_as_NOUN` | besides, non, casino |
+| `NOUN_as_ADJ` | mic, travel, base |
+| `PRON_as_NOUN` | everyone |
+| `ADP_as_NOUN` | over |
+
+**Core issue**: PyCantonese is not designed for English part-of-speech tagging. When processing English tokens in mixed-coding contexts, it tends to mark words with capital letters or unfamiliar words as `PROPN` by default, resulting in systematic mislabeling.
+
+---
+
+## File description
+
+| Documentation | Description |
+|------|------|
+| `gold_standard_completed.csv` | Complete manual annotation results (including `/` lines) |
+| `gold_standard_cleaned.csv` | Cleaned data (remove sentences containing `/` for model training and evaluation) |
+
+> **⚠️ To teammates (zxy / szq): Please use `gold_standard_cleaned.csv` as the data source for all subsequent model training and evaluation. Do not use `gold_standard_completed.csv`. **
+
+---
+
+## 中文版
+
 # Gold Standard Annotation Report
 
 ## 数据概览

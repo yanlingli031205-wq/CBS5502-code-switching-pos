@@ -1,3 +1,145 @@
+# English Version
+
+# lyl Marks contributions and organizes them (for reference in report writing)
+> Date: 2026-04-19｜Responsible person: lyl (Step 3 manual annotation Gold Standard + Step 4a Rule-based)
+
+---
+
+## 1. Basic statistics of data set
+
+| Item | Value |
+|------|------|
+|Total number of sentences | 335 |
+| Number of sentences containing English token | 323 (96.4%) |
+| Total number of tokens | 5,891 |
+| Number of English tokens | 603 (accounting for 10.2%) |
+| Number of English tokens contributed in the NER stage | 120 |
+
+> Data source: `corpus/outputs_ner_spacy/dataset_stats.json` produced by pyt
+
+---
+
+## 2. Gold Standard annotation statistics
+
+### 2.1 Manual annotation scale
+
+| Item | Value |
+|------|------|
+| Number of manually annotated sentences | 335 |
+| Manually annotated English token number (including `/`) | 623 |
+| Number of tokens marked with `/` (not recognized by PyCantonese) | 27 |
+| `/` Proportion (token level) | 4.33% |
+| Number of sentences after cleaning (gold_standard_cleaned.csv) | 310 |
+| Number of English tokens after cleaning | 569 |
+
+> `/` means that PyCantonese failed to extract the English token, and the word is completely missing in the automatic annotation. Sentences containing `/` (25 sentences in total) have been removed from the cleaned version.
+
+### 2.2 Labeling specifications
+
+Manual annotation adopts the Universal POS Tags standard, with a total of 12 tags:
+
+| Tags | Meaning | Typical examples |
+|------|------|---------|
+| NOUN | common noun | video, mic, feel, support |
+| PROPN | Proper Nouns | Tesla, Elon Musk, YouTube |
+| VERB | verb | post, claim, follow, update |
+| ADJ | Adjective | cool, huge, cute |
+| ADV | Adverb | really, so, yet, besides |
+| NUM | numerals | one, 100 |
+| PRON | Pronoun | I, you, everyone |
+| DET | Qualifier | the, a, this |
+| ADP | Preposition | in, for, over |
+| CONJ | Conjunction | and, but, or |
+| INTJ | Interjections | haha, omg, congrats, wah |
+| X | Uncategorized | btw, lol, XDD, pls |
+
+---
+
+## 3. PyCantonese automatic annotation accuracy rate
+
+### 3.1 Overall accuracy
+
+| Data set | Token number | Correct number | Error number | Correct rate |
+|--------|---------|--------|--------|--------|
+| All (excluding `/`) | 596 | 288 | 308 | 48.32% |
+| After cleaning (cleaned) | 569 | 278 | 291 | **48.86%** |
+
+> The English POS annotation accuracy rate of PyCantonese in the Cantonese-English mixed coding context is about **48.86%**, which is close to the random level, indicating that the tool is not optimized for code-switching scenarios.
+
+### 3.2 Misattribution
+
+The main systematic error of PyCantonese is **PROPN over-annotation**: when encountering an English word with the first letter capitalized or an unknown word, it is marked as PROPN by default. This problem has been improved after the introduction of spaCy NER (multi-word personal name/brand name recognition is more accurate), but the NER-first strategy also brought about a new PROPN mislabeling problem.
+
+---
+
+## 4. Main error types and frequencies
+
+The following are the main types of errors found during the manual annotation process. There are 71 errors in total, covering the following 5 categories:
+
+| Error type | Typical cases | Description |
+|---------|---------|------|
+| `VERB_as_PROPN` | Delay, Quit, share, Update, compare | Verbs with capital letters are misjudged as proper nouns |
+| `ADJ_as_PROPN` | Huge, Dramatic, Chill, Nice, cute | Capitalized adjectives are misjudged as proper nouns |
+| `INTJ_as_PROPN` | haha, lol, omg, wow, congrats, Salute | Interjections misjudged as proper nouns |
+| `X_as_PROPN` | btw, XDD, pls, wor, lor | Internet abbreviations/modal particles are misjudged as proper nouns |
+| `NOUN_as_PROPN` | facial, fans, BGM, MC, MV, feel, po | Common nouns are misjudged as proper nouns |
+| `VERB_as_NOUN` | looks, point, follow, love, made, support, glowing, mark, update | Verb was misjudged as a noun |
+| `ADJ_as_NOUN` | gorgeous, native, fun, good, fit, better, clear | Adjective misjudged as noun |
+| `ADV_as_NOUN` | non, so, really, anyway | Adverb misclassified as noun |
+| `NOUN_as_ADJ` | Travel, Mic, base, ball, topic, details, link, logic, lip, feel | Noun misjudged as adjective |
+| `VERB_as_ADJ` | mute, update, inspired, appreciate | Verb misclassified as adjective |
+| `ADJ_as_VERB` | proud, inspiring | Adjective misjudged as verb |
+| `NOUN_as_VERB` | channel, team | Noun misjudged as verb |
+| `PROPN_as_NOUN` | YouTube, threads, ig, YouTuber, some people/store names | Proper nouns were misjudged as common nouns |
+| `NOUN_as_ADV` | Lunch, casino | Noun misclassified as adverb |
+| `ADP_as_NOUN` | over (voice over) | Preposition was misjudged as a noun |
+| `ADV_as_VERB` | yet | Adverb misclassified as verb |
+| `ADV_as_ADJ` | much (so much) | Adverb was misjudged as adjective |
+| `PRON_as_NOUN` | everyone | Pronoun misclassified as noun |
+
+> For detailed error analysis, see `annotation/error_analysis/error_analysis_report.md`
+
+---
+
+## 5. Rule-based correction direction (Step 4a preliminary rule)
+
+Based on error analysis, the following disambiguation rules are formulated:
+
+| Rule number | Rule description |
+|---------|---------|
+| R1 | Create a vocabulary list of common English verbs. If token is in the vocabulary list and auto_pos == PROPN → change to VERB |
+| R2 | Create a vocabulary list of common English adjectives. If token is in the vocabulary list and auto_pos == PROPN → change to ADJ |
+| R3 | Create a vocabulary list of interjections (haha, lol, omg, wow, congrats, fighting, etc.), auto_pos is not INTJ → change to INTJ |
+| R4 | Create a list of network abbreviations/modal particles (btw, pls, XD, XDD, wor, lor, ar, la, etc.) → Change to X |
+| R5 | token is all lowercase and auto_pos == PROPN → further determine the part of speech |
+| R6 | follow/support/share is preceded by a personal pronoun or a person's name as the subject → change to VERB |
+| R7 | "feel" or verb before feel → changed to NOUN |
+| R8 | The verb "speak/speak" is followed by an English word → Priority mark NOUN |
+| R9 | Love is followed by a pronoun (it/them, etc.) → changed to VERB |
+| R10 | Multiple consecutive capitalized words → overall recognition as PROPN |
+| R11 | Words containing hyphens (such as part-time) → do not split, and the whole is marked NOUN |
+| R12 | "D" is used as "replacement" for "Cantonese" → marked with X, excluding English tokens |
+| R13 | numeric token → NUM |
+| R14 | Preceded by adverb → followed by word tendency VERB; preceded by numeral → followed by word tendency NOUN |
+
+---
+
+## 6. Key conclusions that can be written into the report
+
+1. PyCantonese’s English POS automatic annotation accuracy rate on Cantonese-English mixed code corpus is only about **48.86%**, which is close to the random baseline, reflecting the limitations of this tool in code-switching scenarios.
+
+2. The most important systematic error is **PROPN over-labeling**: PyCantonese tends to label capitalized or unfamiliar English words as PROPN by default. Among the 71 summarized errors, more than half involve PROPN mislabeling.
+
+3. After the introduction of spaCy NER (v2), the recognition accuracy of multi-word proper nouns (such as Elon Musk, BBC) has improved, but the NER-first strategy also introduces the new common word PROPN mislabeling problem, and there is a trade-off between the two.
+
+4. English words in Cantonese-English mixed codes have a large number of context-dependent part-of-speech ambiguities (such as post/feel/support/update have different parts of speech in different sentences). This is the core challenge that the three methods of rule-based, BiLSTM-CRF, and mBERT need to solve.
+
+5. English tokens (marked as `/`) that cannot be recognized by PyCantonese account for **4.33%** of the total tokens, indicating that there is a problem of missed recognition in the automatic extraction stage itself, which further affects the quality of downstream annotation.
+
+---
+
+## 中文版
+
 # lyl 标注贡献整理（供报告写作参考）
 > 日期：2026-04-19｜负责人：lyl（Step 3 人工标注 Gold Standard + Step 4a Rule-based）
 

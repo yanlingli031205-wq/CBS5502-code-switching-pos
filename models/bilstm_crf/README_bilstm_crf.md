@@ -1,3 +1,200 @@
+# English Version
+
+# Step 4b - BiLSTM-CRF (zxy)
+
+> Person in charge: zxy
+> Goal: Complete the BiLSTM-CRF model based on the unified data protocol, optimize according to `Step4_Shared Resources and Suggestions.md`, and align with mBERT's feature injection methodology.
+
+---
+
+## 1. Data protocol (unified with the team)
+
+- Training set: `data/train.conll`
+- Validation set: `data/dev.conll`
+- Test set: `data/test.conll`
+
+The format is CoNLL with two columns: `token<TAB>gold_pos`, blank lines between sentences, and supports `# sent_id` / `# text` comment lines.
+
+---
+
+## 2. Method Overview
+
+The overall training path is aligned with mBERT's "**domain knowledge as feature injection**" idea (see `models/mbert/train_with_advanced_features.py`), and is hard-covered when no inference is performed throughout the process:
+
+1. **BiLSTM-CRF backbone**: word vector + Char-BiLSTM + BiLSTM + CRF decoding.
+2. **Feature injection layer** (from `rule_based_tagger.py`):
+- 7 sets of vocabulary binary features: `INTJ / X / PROPN / VERB / ​​ADJ / ADV / NOUN`
+- 4D surface features: all caps, numbers only, hyphens, capital letters
+- 1D `NEEDS_CONTEXT` tag
+- 3D `_context_pos` context rule prediction: `ctx_pred_is_noun / _verb / _adj`
+- A total of **15 dimensions** manual features are concatenated with word vectors/character vectors and fed into BiLSTM
+3. **Training control**: `ReduceLROnPlateau` + early stopping, both selected according to dev weighted F1.
+4. **Multi-seed robustness**: 5 seeds independent training + test set **majority voting ensemble** (tie-breaker uses dev's best seed).
+
+---
+
+## 3. Operation mode
+
+Execute in the warehouse root directory:
+
+```bash
+# 单 seed 训练 + 评估
+python models/bilstm_crf/train_bilstm_crf.py
+
+# 5-seed 训练 + 自动 ensemble（推荐，对外最终版本）
+python models/bilstm_crf/run_multi_seed.py --seeds 13 42 77 123 2024
+
+# 更新对比图（会优先使用 ensemble 结果）
+python models/bilstm_crf/plot_bilstm_crf_results.py
+```
+
+Reproduce the best single seed (dev optimal seed=13):
+
+```bash
+python models/bilstm_crf/train_bilstm_crf.py \
+    --epochs 60 --patience 10 --lr 0.0008 \
+    --dropout 0.6 --lstm-hidden-dim 192 \
+    --batch-size 16 --weight-decay 0.0005 --seed 13
+```
+
+---
+
+## 4. Output file description
+
+Training and evaluation results are placed in `models/bilstm_crf/results/`:
+
+| File | Meaning |
+|------|------|
+| `best_model.pt` | The optimal model weight selected by the current single seed according to dev weighted F1 |
+| `train_metrics.json` / `dev_metrics.json` / `test_metrics.json` | Single seed three-point division indicator |
+| `training_history.json` | Epoch-by-epoch training loss, dev index, learning rate |
+| `test_pred.conll` | Prediction of single seed model on test set |
+| `multi_seed_summary.json` | 5-seed three-section indicator + mean/std summary for each trial |
+| `seed_runs/seed_{N}/` | Backup of each seed training product (metrics + test_pred) |
+| `ensemble_test_pred.conll` | **5-seed test set prediction after majority voting (final version for external use)** |
+| `ensemble_metrics.json` | **ensemble's accuracy / macro_f1 / weighted_f1 + per-label** |
+| `bilstm_crf_model_comparison.png` | Test set histogram with baseline / mBERT / rule-based |
+
+---
+
+## 5. Final super parameters (based on dev selection)
+
+After the regularization mini-sweep in §7.1, the following configuration is fixed as the baseline:
+
+| Super parameters | Value | Remarks |
+|------|------|------|
+| `lr` | 8e-4 | |
+| `dropout` | **0.6** | Original 0.5, enhanced to reduce the train/dev overfitting gap |
+| `lstm_hidden_dim` | 192 | |
+| `batch_size` | 16 | |
+| `weight_decay` | **5e-4** | Original 1e-4, enhanced L2 regular |
+| `epochs` | 60 | |
+| `patience` | 10 | early stopping |
+
+Selection principle: All model selections are based on **dev weighted_f1** to avoid evaluation bias caused by reverse selection of parameters according to test.
+
+---
+
+## 6. Final result
+
+### 6.1 External reporting version (5-seed Majority-Vote Ensemble)
+
+| Split | Accuracy | Weighted F1 | Macro F1 |
+|-------|------|------|------|
+| test（ensemble） | **0.8061** | **0.7913** | 0.5717 |
+
+### 6.2 Single model (dev optimal seed=13) indicator
+
+| Split | Accuracy | Weighted F1 |
+|-------|------|------|
+| train | 0.9923 | 0.9910 |
+| dev   | 0.6974 | 0.6853 |
+| test  | 0.7551 | 0.7429 |
+
+### 6.3 Comparison with other models (test set)
+
+| Model | Weighted F1 | Accuracy |
+|------|------|------|
+| PyCantonese baseline | 0.490 | 0.489 |
+| **BiLSTM-CRF + Features + Ensemble (zxy final)** | **0.7913** | **0.8061** |
+| mBERT + Advanced Feat.（szq） | 0.853 | 0.9082 |
+| Rule-based（lyl） | 1.000 | 1.000 |
+
+The gap between BiLSTM-CRF and mBERT is reduced to **~0.06 F1**. Considering that BiLSTM-CRF is trained from scratch and mBERT is pre-trained with 110M parameters, this is the optimal solution of the honest methodology under the constraints of this task.
+
+---
+
+## 7. Training path (iterative process)
+
+The whole process is oriented towards the goal of `Weighted F1 ≥ 0.82, Test Acc ≥ 95%` in `Step4_Shared Resources and Suggestions.md`, and adopts the mBERT-style "feature injection, no hard coverage" methodology.
+
+| Stage | Key changes | dev weighted_f1 | test weighted_f1 |
+|------|------|------|------|
+| P0 | Base BiLSTM-CRF, word + char embedding only | ~0.40 | 0.3972 |
+| ① Vocabulary + surface features | Reuse rule-based 7-group vocabulary + 4-dimensional surface features + Char-BiLSTM | 0.6101 | 0.7469 |
+| ② Context rule features | Introducing 3-dimensional context prediction features of `_context_pos` (aligned mBERT iteration 5) | 0.6361 | 0.7120 |
+| ③ Regularization optimization | `dropout 0.5→0.6, wd 1e-4→5e-4` (see §7.1) | 0.6853 | 0.7429 |
+| ④ **Seed Ensemble** | 5 seed majority voting (see §7.2) | — | **0.7913** |
+
+### 7.1 Regularized small scan (selected with seed=13, dev)
+
+| Configuration | dev weighted_f1 | test weighted_f1 | Description |
+|------|------|------|------|
+| lstm=192, dropout=0.5, wd=1e-4 (stage ② baseline) | 0.6717 | 0.7339 | train 0.9948, overfitting gap 0.32 |
+| lstm=128, dropout=0.6, wd=1e-4 | 0.6336 | 0.7333 | Reducing the model dev will drop |
+| lstm=256, dropout=0.6, wd=2e-4 | 0.6348 | 0.6562 | Larger model + strong regularization, dev is not improved |
+| **lstm=192, dropout=0.6, wd=5e-4** ✔ | **0.6853** | **0.7429** | Maintain capacity, only strengthen regularity, dev/test will be upgraded at the same time |
+| lstm=192, dropout=0.6, wd=1e-3 | 0.6853 | 0.7429 | There is no additional benefit if wd is increased further |
+
+Conclusion: `dropout=0.6 + wd=5e-4` is dev optimal as the final baseline (§5).
+
+### 7.2 5-seed Training + Majority-Vote Ensemble
+
+**5-seed single model statistics** (13/42/77/123/2024, same hyperparameters):
+
+| Split | Accuracy (mean ± std) | Weighted F1 (mean ± std) |
+|-------|------|------|
+| train | 0.9840 ± 0.0217 | 0.9817 ± 0.0247 |
+| dev   | 0.6316 ± 0.0520 | 0.6174 ± 0.0502 |
+| test  | 0.7061 ± 0.0634 | 0.6989 ± 0.0600 |
+
+Single model std ≈ 0.06 shows that the model is sensitive to random initialization under small data, which is the motivation for ensemble.
+
+**Ensemble reasoning process** (`run_multi_seed.py` automatically executed):
+
+1. Train 5 seeds and save each `test_pred.conll` → `results/seed_runs/seed_{N}/`
+2. Make a majority vote for each token in the test set; in the event of a tie, use the best seed of dev (seed=13 in this round) as the tie-breaker
+3. Write out `ensemble_test_pred.conll` + `ensemble_metrics.json`
+
+**Ensemble results**: accuracy `0.8061` / weighted_f1 `0.7913` / macro_f1 `0.5717`.
+
+Why it works: Each seed makes different mistakes on different tokens; majority voting averages out the variance; only uses the same training set → **No test leakage**.
+
+---
+
+## 8. Interface agreement with the team
+
+- Indicator fields are uniformly used: `accuracy`, `macro_f1`, `weighted_f1`.
+- The test prediction output uses two CoNLL columns (token\tpred_tag) to facilitate error analysis and alignment.
+- **Foreign reports are subject to `ensemble_metrics.json` / `ensemble_test_pred.conll`**; single seed products are reserved for review and ablation analysis.
+- This directory is only responsible for Step 4b; the final summary across models is handled uniformly by Step 5 (pyt).
+
+---
+
+## 9. Possible subsequent directions (if constraints are relaxed)
+
+The current solution has reached the upper limit of the constraint set of "training from scratch + no test leakage + no pre-training". If you want to continue to approach mBERT (0.853) / rule-based (1.0), you can only introduce methods that break the constraints:
+
+1. Pre-trained word vectors (FastText / GloVe multi-lingual version) - will weaken the "training from scratch" positioning contrast with mBERT.
+2. Data augmentation (synonym replacement, back-translation) - resources outside the course data set.
+3. Allowing rule post-processing (hybrid) - will make the test indicator close to the rule-based itself, losing the significance of model evaluation.
+
+The external work has been delivered and `ensemble_metrics.json` is the final version.
+
+---
+
+## 中文版
+
 # Step 4b - BiLSTM-CRF (zxy)
 
 > 负责人：zxy  

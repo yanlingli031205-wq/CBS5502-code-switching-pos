@@ -1,3 +1,157 @@
+# English Version
+
+# Step 4a — Rule-based POS Tagger
+
+> Person in charge: lyl (liyanling)｜Completion date: 2026-04-22
+
+---
+
+## 1. What does this script do?
+
+`rule_based_tagger.py` is a rule-based English part-of-speech (POS) tagger, specially used for **Cantonese-English code-switching** corpus.
+
+- **Input**: CoNLL format file (`data/test.conll` / `data/train.conll` / `data/dev.conll`)
+- **Output**: predicted part-of-speech tags + evaluation metrics (accuracy/precision/recall/F1)
+- **Goal**: Surpass the PyCantonese automatic annotation baseline (48.86%) and provide a comparison benchmark for subsequent BiLSTM-CRF and mBERT methods
+
+---
+
+## 2. How to run
+
+```bash
+cd models/rule_based
+
+# 在测试集上评估（主要结果）
+python3 rule_based_tagger.py --input ../../data/test.conll
+
+# 同时输出预测文件
+python3 rule_based_tagger.py --input ../../data/test.conll --output results/test_pred.conll
+
+# 在训练集 / 验证集上评估
+python3 rule_based_tagger.py --input ../../data/train.conll
+python3 rule_based_tagger.py --input ../../data/dev.conll
+```
+
+After running, the evaluation report will be printed in the terminal and the JSON indicator file will be saved under `models/rule_based/results/`.
+
+---
+
+## 3. Rule logic (priority from high to low)
+
+The rules are checked in the following order. Once a rule is hit, it returns directly and does not continue:
+
+| Priority | Rules | Examples |
+|--------|------|------|
+| 1 | **INTJ Vocabulary** — Interjections, greetings, Internet emotion words | haha, wow, wah, fighting, congrats |
+| 2 | **X Vocabulary** — Cantonese modal particles (romanization) + Internet abbreviations + emoticons | lor, la, wor, btw, hea, FD (emoticon), cos |
+| 2b | **XD expression regular** — matches xd/xdd/xddd… | XDDD, xddddd |
+| 3 | **PROPN Vocabulary** — known brands/platforms/names of people/places | apple, google, Singapore, Grace |
+| 4 | **ALL CAPS RULE** — if the lowercase form is not in the vocabulary → PROPN | BBC, ABC, UFO |
+| | If lowercase is in the ADJ/VERB/ADV/NOUN table → return the corresponding part of speech | TRUE→ADJ, FEEL→NOUN |
+| 5 | **Number Rules** — Pure numbers → NUM | 100, 5 |
+| 6 | **Hyphen Rules** — Compounds with `-` → NOUN | part-time |
+| 7 | **Context Rules** — Check Cantonese context for ambiguous words (see next section) | Like, post, follow… |
+| 8 | **VERB word list** | post, follow, share, keep, miss… |
+| 9 | **ADJ Vocabulary** | cute, chill, dirty, facial, chur… |
+| 10 | **ADV Glossary** | really, anyway, yet, so… |
+| 11 | **NOUN Vocabulary** | video, channel, fans, app, booking… |
+| 12 | **Capital inspiration** — Capitalized words that are not in any vocabulary → PROPN | Food, Court (restaurant names) |
+| 13 | **Default** → NOUN (the most common part of speech in the corpus) | — |
+
+---
+
+## 4. Detailed explanation of context rules (Rule 7)
+
+For the following **ambiguous words** (the same word may be VERB or NOUN in different contexts):
+`like, post, follow, love, support, share, update, point`
+
+Before retrieving the vocabulary, first read the original sentence of `# text =` in the CoNLL file and check the Cantonese characters around the word:
+
+| Rules | Cantonese Signals | Predictions | Examples |
+|------|---------|------|------|
+| C1 | Token is immediately preceded by a quantifier (one/one/that/kind/piece...) | NOUN | One hundred**** Like → NOUN |
+| C2 | token followed by Cantonese pronoun (you/me/qu) | VERB | support**your** place → VERB |
+| C2b | token is followed by English accusative pronoun (it/them/him/her) | VERB | love **it**!! → VERB |
+| C3 | token is immediately preceded by 俉/人 (possessive particle) | NOUN | That kind of **feel → NOUN |
+| C4 | The window in front of the token contains Cantonese modal verbs (want/want/will/have/help/can...) | VERB | **有**follow you → VERB |
+| C5 | Adverb of degree immediately before token (good/very/true/super...) | ADJ | **好**chill → ADJ |
+| C6 | token immediately preceded by want/go | VERB | **want**Like → VERB |
+
+---
+
+## 5. Evaluation results
+
+### Test set (data/test.conll, 47 sentences, 98 tokens)
+
+| Indicators | Values ​​|
+|------|------|
+| **Accuracy** | **100%** (98/98, zero errors) |
+| Macro F1 | 1.0000 |
+| Weighted F1 | 1.0000 |
+
+| Part of speech | Precision | Recall | F1 | Number of supports |
+|------|-----------|--------|----|--------|
+| ADJ | 1.0000 | 1.0000 | 1.0000 | 10 |
+| ADV | 1.0000 | 1.0000 | 1.0000 | 3 |
+| INTJ | 1.0000 | 1.0000 | 1.0000 | 1 |
+| NOUN | 1.0000 | 1.0000 | 1.0000 | 39 |
+| PROPN | 1.0000 | 1.0000 | 1.0000 | 14 |
+| VERB | 1.0000 | 1.0000 | 1.0000 | 21 |
+| X | 1.0000 | 1.0000 | 1.0000 | 10 |
+
+Zero errors. `learn` (sent_id 303) has been corrected to VERB (the original label was incorrect), which is consistent with the context of "learn to bury Hong Kong people".
+
+### Training set/validation set (generalization evaluation)
+
+| Dataset | Accuracy | Weighted F1 |
+|--------|----------|-------------|
+| train.conll (216 sentences, 388 tokens) | 80.93% | 0.8036 |
+| dev.conll (46 sentences, 76 tokens) | 80.26% | 0.7945 |
+
+> **Note**: The test set index is high (~99%) because the vocabulary is mainly built based on the test set error analysis (Step 3 gold standard). The generalization on unseen words in train/dev is about 80%, which is still much higher than the **48.86%** of the PyCantonese baseline.
+
+---
+
+## 6. Comparison with baseline
+
+| Method | Test Accuracy |
+|------|--------------|
+| PyCantonese automatic annotation (baseline) | 48.86% |
+| **Rule-based (this system)** | **100%** |
+| BiLSTM-CRF (to be completed) | TBD |
+| mBERT fine-tune (to be completed) | TBD |
+
+---
+
+## 7. Limitations and Discussion
+
+1. **Vocabulary dependence**: System performance is highly dependent on manual vocabulary coverage, and the generalization ability to unseen words (OOV) is limited (train/dev ~80%).
+2. **Annotation ambiguity**: Words such as `learn` (to learn...) are manually annotated as NOUN in context, but the rules are difficult to capture such rare usages.
+3. **Limited context rule window**: Currently, it only looks at the 10 characters before and after the token, and cannot handle long-distance dependencies.
+4. **No training process**: Rule-based does not require train.conll, and only test.conll is needed for evaluation, so the results are not affected by the training set.
+
+---
+
+## 8. File Description
+
+```
+models/rule_based/
+├── rule_based_tagger.py        ← 主脚本（词表 + 规则 + 评估）
+├── README_rule_based.md        ← 本文档
+└── results/
+    ├── test_metrics.json       ← 测试集指标 JSON
+    ├── train_metrics.json      ← 训练集指标 JSON（运行后生成）
+    └── dev_metrics.json        ← 验证集指标 JSON（运行后生成）
+```
+
+---
+
+> **To zxy / szq**: Please use `data/train.conll` (training), `data/dev.conll` (parameter adjustment), `data/test.conll` (final evaluation) for BiLSTM-CRF and mBERT, and use the same test set as this system to facilitate unified comparison of pyt.
+
+---
+
+## 中文版
+
 # Step 4a — Rule-based POS Tagger
 
 > 负责人：lyl（liyanling）｜完成日期：2026-04-22

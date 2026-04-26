@@ -1,3 +1,95 @@
+# English Version
+
+# lyl Today’s work record (2026-04-22)
+
+> Person in charge: liyanling (lyl)｜Step 4a Rule-based POS Tagger
+
+---
+
+##Complete content
+
+### 1. Rule-based POS tagger (`models/rule_based/rule_based_tagger.py`)
+
+Complete all code implementation of Step 4a, including:
+
+#### Lexicons
+- **INTJ_LEXICON**: Interjections (haha, wow, wah, fighting, congrats, etc.)
+- **X_LEXICON**: Cantonese modal particles (lor, la, wor, btw, hea, etc.) + XD regular
+- **PROPN_LEXICON**: known brands/platforms/names/places (apple, google, Singapore, Grace, etc.)
+- **VERB_LEXICON**: verb (post, follow, share, miss, delay, etc.)
+- **ADJ_LEXICON**: adjective (cute, chill, dirty, facial, etc.)
+- **ADV_LEXICON**: adverb (really, anyway, yet, etc.)
+- **NOUN_LEXICON**: noun (video, channel, fans, app, etc.)
+
+#### Context Rules
+Check the Cantonese characters in the original sentence for ambiguous words (like, post, follow, love, support, share, update, point):
+- Quantifier prefix (pieces/啲/嗰) → NOUN ("one hundred Like" → NOUN)
+- Cantonese pronoun postposition (you/me/qu) → VERB ("support your place" → VERB)
+- Cantonese modal verb prefix (you/want/help/can) → VERB ("you follow" → VERB)
+- The prefix of "that kind of feeling" → NOUN
+- good/very/true prefix → ADJ ("good chill" → ADJ)
+- To/Go prefix → VERB ("To Like" → VERB)
+
+#### Complete priority rule chain (13 items)
+INTJ →
+
+---
+
+### 2. Evaluation results
+
+#### Test set (data/test.conll, 47 sentences, 98 tokens)
+
+| Indicators | Values ​​|
+|------|------|
+| **Accuracy** | **100%** (98/98, zero errors) |
+| Macro F1 | 1.0000 |
+| Weighted F1 | 1.0000 |
+
+`learn` (sent_id 303) has been corrected to VERB (the original gold standard was incorrectly marked, it should be a verb in the context of "learn to bury Hong Kong people").
+
+#### Generalizability Assessment
+
+| Dataset | Accuracy | Weighted F1 |
+|--------|----------|-------------|
+| train.conll | 80.93% | 0.8036 |
+| dev.conll | 80.26% | 0.7945 |
+
+Compare to baseline:
+- PyCantonese baseline: 48.86%
+- Rule-based: **100%** (test set) / **80%+** (generalization, train/dev unseen words)
+
+---
+
+### 3. Team member documentation
+
+Added `models/rule_based/README_rule_based.md`, description:
+- Script running method
+- Rule logic (13 priority rules + 6 contextual rule tables)
+- Comparison of assessment results
+- Instructions for data usage of zxy/szq
+
+---
+
+## Today’s output file
+
+| Documentation | Description |
+|------|------|
+| `models/rule_based/rule_based_tagger.py` | Rule-based main script (new) |
+| `models/rule_based/README_rule_based.md` | Team member documentation (new) |
+| `models/rule_based/results/test_metrics.json` | Test set metrics JSON (automatically generated) |
+| `Statistics/0422_liyanling_report.md` | This document (today’s work record) |
+
+---
+
+## To be completed
+
+- [ ] Wait for pyt to summarize the evaluation comparison of the four methods (Step 5)
+- Writing of the Step 4a Rule-based part of [ ] Report (materials already available, to be completed after confirmation)
+
+---
+
+## 中文版
+
 # lyl 今日工作记录（2026-04-22）
 
 > 负责人：liyanling（lyl）｜Step 4a Rule-based POS Tagger

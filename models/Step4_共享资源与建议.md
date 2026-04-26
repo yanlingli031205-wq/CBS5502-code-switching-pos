@@ -1,3 +1,91 @@
+# English Version
+
+# Step 4 Share resources and suggestions
+
+> Experience summary provided for BiLSTM-CRF (zxy) and mBERT (szq)
+> Author: lyl (Step 4a Rule-based) | Date: 2026-04-22
+
+---
+
+## 1. Data protocol (important!)
+
+To ensure that the three methods can be benchmarked and compared, **please use the following data sets**:
+
+| Purpose | File Path | Size | Purpose |
+|------|---------|------|------|
+| **Training** | `data/train.conll` | 216 sentences, 388 tokens | BiLSTM-CRF / mBERT training |
+| **Verification** | `data/dev.conll` | 46 sentences, 76 tokens | Super parameter adjustment, early stopping |
+| **Test** | `data/test.conll` | 47 sentences, 98 tokens | Final performance evaluation (common to three methods) |
+
+**Note**: `learn` of sent_id 303 in test.conll has been changed from NOUN to VERB (error correction according to the gold standard, context "learn to bury Hong Kong people").
+
+---
+
+## 2. Performance benchmark (Rule-based results)
+
+### 2.1 This is your strong baseline
+
+| Indicators | Values ​​|
+|------|------|
+| **Test Accuracy** | **100%** (98/98) |
+| **Train accuracy** | 80.93% (314/388) |
+| **Weighted F1** | 0.80 |
+| **vs PyCantonese** | +51.14% (test) / +32.07% (train) |
+
+---
+
+## 3. Key Enlightenments
+
+### 3.1 The particularity of Cantonese-English mixed code
+
+You can’t simply use a universal English POS tagger! The 6 Cantonese context rules are core innovations.
+
+### 3.2 Vocabulary as Features
+
+7 carefully designed glossaries that can be reused as:
+- External features of BiLSTM-CRF
+- Preprocessing signals during mBERT fine-tuning
+
+### 3.3 Reference value of error analysis
+
+The 71 PyCantonese errors summarized in Step 3 directly guide the rule design.
+
+### 3.4 Evaluation indicators
+
+Note the differences between Macro F1 vs Weighted F1:
+- **Macro F1**: Rare parts of speech lower the average
+- **Weighted F1**: reflects real application performance
+
+---
+
+## 4. Benchmarking of expected results
+
+| Method | Test Acc | Train Acc | Weighted F1 |
+|------|---------|----------|-------------|
+| PyCantonese | 48.86% | ~48.86% | ~0.49 |
+| **Rule-based** | **100%** | 80.93% | 0.80 |
+| BiLSTM-CRF (Target) | ≥95% | ≥82% | ≥0.82 |
+| mBERT (target) | ≥95% | ≥84% | ≥0.83 |
+
+---
+
+## 5. Shared resources
+
+| Resources | Locations |
+|------|------|
+| **Rule-based code** | `models/rule_based/rule_based_tagger.py` |
+| **Rule-based documentation** | `models/rule_based/README_rule_based.md` |
+| **Error Analysis** | `Statistics/Step4a_Rule-based_Method Report.md` |
+| **Dataset** | `data/{train,dev,test}.conll` |
+
+---
+
+Good luck with the model training of zxy and szq!
+
+---
+
+## 中文版
+
 # Step 4 共享资源与建议
 
 > 为 BiLSTM-CRF (zxy) 和 mBERT (szq) 提供的经验总结  

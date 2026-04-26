@@ -1,3 +1,390 @@
+# English Version
+
+# PyCantonese Annotation Error Analysis Report / PyCantonese Annotation Error Analysis Report
+
+---
+
+#中文版
+
+## 1. PROPN over-annotation
+
+### 1.1 Words with initial capital letters are misjudged as PROPN
+
+PyCantonese prefers to mark English words with first capital letters or all capital letters as PROPN by default, even if their actual part of speech is not a proper noun.
+
+- **#1** Hello (should be VERB), Delay (should be VERB, for example: inertia Delay), Quit (should be VERB, for example: Quit Zuoquluo), Aunty (should be NOUN), Huge (should be ADJ), Dramatic (should be ADJ)
+- **#11** Chill (should be ADJ) was incorrectly identified as PROPN
+- **#18** Besides (should be ADV) was misjudged, the first letter of the sentence is capitalized, it is reasonable to suspect that the capitalization triggered the misjudgement
+- **#66** Update (should be VERB) is misjudged as PROPN, for example: IG has no Update
+- **#70** Nice (should be ADJ), cute (should be ADJ) were misjudged as PROPN
+
+### 1.2 Common nouns are misjudged as PROPNs
+
+- **#2** facial, fans, part, FEEL (all caps), best were misjudged as PROPN
+- **#51** BGM, MC, MV, feel were misjudged as PROPN (should be NOUN)
+- **#53** view (for example: one hundred thousand views) was misjudged as PROPN (should be NOUN)
+- **#69** The abbreviation "po" for post (such as "po master") was misjudged as PROPN
+
+### 1.3 Verb was misjudged as PROPN
+
+- **#2** subscribed was mistakenly identified as PROPN
+- **#40** compare, like were misjudged as PROPN (should be VERB)
+- **#45** PASS, SUBSCRIBE, LIKE (initial letter or all capital letters) were misjudged as PROPN
+- **#53** share was misjudged as PROPN, for example: helper share (share should be VERB)
+- **#66** Update was misjudged as PROPN, for example: IG has no Update (should be VERB)
+
+### 1.4 Interjection was misjudged as PROPN
+
+- **#46** haha, lol, omg, omgggg, fighting, wow, congrats are all misclassified as PROPN (should be INTJ)
+- **#50** In the example sentence "Lady! Salute! Salute!", almost all words are misjudged as PROPN (Salute should be INTJ)
+
+### 1.5 Internet abbreviations/modal particles are misjudged as PROPN
+
+- **#4** XDDDDD, XDD (Internet emoticons) were misjudged as PROPN (should be X)
+- **#41** btw, pls, wor, lor, ar, la were misjudged as PROPN (should be X)
+- **#13** Btw, anyway is sometimes misjudged as PROPN (should be X or ADV)
+
+---
+
+## 2. NOUN excessive annotation
+
+### 2.1 Verb was misjudged as NOUN
+
+- **#5** looks (third person singular verb form) was misjudged as NOUN
+- **#8** point was misjudged as NOUN, for example: Neon girl’s point lower eyelashes (should be VERB)
+- **#19** follow was misjudged as NOUN, for example: there is always follow (should be VERB)
+- **#29** love was misjudged as NOUN, for example: love it!! (followed by an object, it should be VERB)
+- **#38** cam (should be VERB when "video/shadow" appears later), fly (for example: fly to Germany), follow are misjudged as NOUN
+- **#55** made (past tense verb), support, share, propose, support (example: support you) were misjudged as NOUN
+- **#64** glowing (e.g. you can see that your whole body is glowing) and mark (e.g. you suddenly marked a tag) were misjudged as NOUN
+- **#67** update was misjudged as NOUN (should be VERB)
+
+### 2.2 Adjective was misjudged as NOUN
+
+- **#39** gorgeous was misjudged as NOUN (should be ADJ)
+- **#48** native (example: native in non native speaker) is misjudged as NOUN (should be ADJ)
+- **#56** fun, good, fit, better, clear were misjudged as NOUN (should be ADJ)
+
+### 2.3 Adverb is misjudged as NOUN
+
+- **#47** non (for example: non in non native speaker) is misjudged as NOUN (should be ADV); so (for example: so in so happy) is misjudged as NOUN (should be ADV)
+- **#54** really, anyway was misjudged as NOUN (should be ADV)
+
+### 2.4 The pronoun is misjudged as NOUN
+
+- **#42** everyone was misjudged as NOUN (should be PRON)
+
+### 2.5 Proper nouns are misjudged as common nouns NOUN
+
+- **#14** Some Hong Kong store names (proper nouns) were misjudged as common nouns NOUN
+- **#16** The person's name (PROPN) was misjudged as NOUN
+- **#25** YouTuber misidentified as NOUN (should be PROPN)
+- **#37** YouTube, threads, ig were misjudged as NOUN (should be PROPN)
+
+---
+
+## 3. Misjudgment as ADJ
+
+### 3.1 The noun was misjudged as ADJ
+
+- **#17** Travel was misidentified as ADJ (should be NOUN)
+- **#23** Mic (microphone) was misjudged as ADJ (should be NOUN), for example: Are you wearing a mic?
+- **#35** base (example: Gundam base) and ball were misjudged as ADJ (should be NOUN)
+- **#43** like was misjudged as ADJ, for example: click like (like here is NOUN)
+- **#59** topic was misidentified as ADJ (should be NOUN)
+- **#62** details was misidentified as ADJ (should be NOUN)
+- **#65** link (Example: Can you share the dress link?), Logic (Example: He can use Chinese logic to speak Cantonese) were misjudged as ADJ (should be NOUN)
+- **#68** lip (e.g. lip stick with you) was misjudged as ADJ (should be NOUN)
+- **#71** feel (for example: the skewers shop... already has that kind of feel) was misjudged as ADJ (should be NOUN)
+
+### 3.2 Verb was misjudged as ADJ
+
+- **#52** mute was misjudged as ADJ, for example: it really means mute (should be VERB)
+- **#57** update (example: update in update vlog), inspired (past tense of verb), and appreciate were misjudged as ADJ (should be VERB)
+
+### 3.3 Adverb was misjudged as ADJ
+
+- **#58** much was misjudged as ADJ, for example: much in so much (should be ADV)
+
+---
+
+## 4. Misjudgment as VERB
+
+### 4.1 Adjective misjudged as VERB
+
+- **#33** Common adjectives in English are mistagged as VERB
+- **#36** proud was mistakenly identified as VERB (should be ADJ)
+- **#61** inspiring was misclassified as VERB (should be ADJ)
+
+### 4.2 Noun misjudged as VERB
+
+- **#44** post was misjudged as VERB, for example: in threads, I often see sheep people post (here post is NOUN, it should be a noun)
+- **#49** channel (misjudged twice) and team were misjudged as VERB (should be NOUN)
+
+### 4.3 Adverb is misjudged as VERB
+
+- **#60** yet was misjudged as VERB, for example: the best is yet to come (should be ADV)
+
+### 4.4 Gerund was misjudged as VERB
+
+- **#63** Gerunds will be misjudged as VERB, for example: planning in propose planning (should be NOUN)
+
+---
+
+## 5. Misjudgment as other parts of speech
+
+### 5.1 Noun misjudged as ADV
+
+- **#12** Lunch (should be NOUN) was misjudged as ADV
+- **#27** casino (should be NOUN, meaning casino) was misjudged as ADV, for example: the only one who knows the first reaction is casino
+
+### 5.2 Preposition was misjudged as NOUN
+
+- **#24** over (should be ADP/preposition) is misjudged as NOUN, for example: over in voice over
+
+### 5.3 Misjudgment of special parts of speech
+
+- **#3** up was misjudged as VERB, but up actually has no verb part of speech in this context
+- **#7** like was misjudged as ADJ, but like only has two parts of speech: NOUN and VERB
+- **#10** wah (interjection INTJ) was misjudged as NOUN, for example: wah is really pretty
+
+---
+
+## 6. Word segmentation and recognition issues
+
+### 6.1 Improper handling of multi-word proper nouns
+
+- **#6** Consecutive English words are sometimes all marked as NOUN
+- **#20** Multiple proper nouns are split, and each word is marked separately with PROPN. For example: the base of Bakehouse egg tart is Sourdough Eggs Tart.
+- **#26** Some Hong Kong store names are not recognized accurately, for example: Vision Bakery, Bake House
+- **#30** Multiple consecutive English words with capital letters should be recognized as proper nouns as a whole, for example: Now You See Me, House Keeping, Drag Queen
+
+### 6.2 Specific word recognition problem
+
+- **#9** "po" in "po master" is the abbreviation of post and should be regarded as a proper noun/noun
+- **#22** feel has different parts of speech in different sentences, so it is easy to be mislabeled: when preceded by "generous" or preceded by a verb, feel should be labeled NOUN (for example: my father speaks Cantonese and has Mr. Ni Kuang's feel)
+- **#15** Some product names are marked correctly (PROPN), but the marking behavior is inconsistent
+- **#21** Incorrect recognition of relative titles such as daddy, mom, uncle, mami, dad, etc.
+- **#31** When "D" means "" in Cantonese, it should be marked with an X and will not be recognized as an English token.
+- **#32** Numbers should be marked NUM
+- **#34** part-time is NOUN as a whole, it is recommended not to split it.
+
+---
+
+## 7. Rule suggestions
+
+- **#19 follow rule**: follow is preceded by a personal pronoun or a person's name as the subject → marked VERB
+- **#22 feel rule**: "feel" is preceded by "俑" or preceded by a verb → feel is marked NOUN
+- **#28 Rules for the word "shuo"**: say/speak followed by an English word → NOUN is given priority, for example: say romansh
+- **#29 love rule**: love is followed by a pronoun (it / them, etc.) → marked VERB
+- **#30 Continuous Capitalization Rule**: multiple consecutive English words with initial capitals → overall mark PROPN
+- **#34 Compound word rules**: Words containing hyphens (such as part-time) → do not split, and the whole is marked NOUN
+- **#53 Contextual Rule**: preceded by an adverb → followed by the word mark VERB; preceded by a numeral → followed by the word mark NOUN
+
+---
+
+## 8. PyCantonese improvement instructions (pyt v2)
+
+The v2 version introduces spaCy NER, which has the following improvements compared to v1:
+
+- v1 cannot recognize continuous multi-word English (for example, Elon Musk only recognizes Elon, and subsequent words are not extracted); v2 can recognize multi-word entities as a whole after adding NER.
+- Names of people/organizations such as BBC, Elon Musk, etc. can be correctly identified as PROPN
+- Limitation: NER priority strategy sometimes over-labels common words as PROPN
+
+---
+---
+
+# English Version
+
+## 1. Over-tagging as PROPN
+
+### 1.1 Capitalized Words Mistagged as PROPN
+
+PyCantonese tends to default to PROPN for words beginning with a capital letter or written in all-caps, even when the actual POS is not a proper noun.
+
+- **#1** Hello (→VERB), Delay (→VERB, e.g. inertia Delay), Quit (→VERB, e.g. Quitzuoqu啰), Aunty (→NOUN), Huge (→ADJ), Dramatic (→ADJ)
+- **#11** Chill (→ADJ) mistagged as PROPN
+- **#18** Besides (→ADV) mistagged; sentence-initial position with capital letter likely triggers PROPN
+- **#66** Update (→VERB) mistagged as PROPN, e.g. IG无咩Update
+- **#70** Nice (→ADJ), cute (→ADJ) mistagged as PROPN
+
+### 1.2 Common Nouns Mistagged as PROPN
+
+- **#2** facial, fans, part, FEEL (all-caps), best mistagged as PROPN
+- **#51** BGM, MC, MV, feel mistagged as PROPN (should be NOUN)
+- **#53** view (e.g. enough for one hundred thousand views) mistagged as PROPN (should be NOUN)
+- **#69** Abbreviation "po" (short for post, as in "po主") mistagged as PROPN
+
+### 1.3 Verbs Mistagged as PROPN
+
+- **#2** subscribed mistagged as PROPN
+- **#40** compare, like mistagged as PROPN (should be VERB)
+- **#45** passing, Subscribed, LIKE (capitalized/all-caps) mistagged as PROPN
+- **#53** share mistagged as PROPN, e.g. Help share (should be VERB)
+- **#66** Update mistagged as PROPN, e.g. IG are not updated (should be VERB)
+
+### 1.4 Interjections Mistagged as PROPN
+
+- **#46** haha, lol, omg, omgggg, fighting, wow, congrats mistagged as PROPN (should be INTJ)
+- **#50** In "婻女!Salute!Salute!", nearly all tokens mistagged as PROPN (Salute should be INTJ)
+
+### 1.5 Internet Slang / Discourse Particles Mistagged as PROPN
+
+- **#4** XDDDDD, XDD (internet emoticons) mistagged as PROPN (should be X)
+- **#41** btw, pls, wor, lor, ar, la mistagged as PROPN (should be X)
+- **#13** Btw, anyway sometimes mistagged as PROPN (should be X or ADV)
+
+---
+
+## 2. Over-tagging as NOUN
+
+### 2.1 Verbs Mistagged as NOUN
+
+- **#5** looks (3rd person singular verb form) mistagged as NOUN
+- **#8** point mistagged as NOUN, e.g. Neon girl’s point lower eyelashes (should be VERB)
+- **#19** follow mistagged as NOUN, e.g. always follow (should be VERB)
+- **#29** love mistagged as NOUN, e.g. love it!! (followed by object, should be VERB)
+- **#38** cam (should be VERB when followed by video/影), fly (e.g. fly to Germany), follow mistagged as NOUN
+- **#55** made (past tense verb), support, share, propose, support (e.g. support your place) mistagged as NOUN
+- **#64** glowing (e.g. I can see you are glowing), mark (e.g. you suddenly marked a tag) mistagged as NOUN
+- **#67** update mistagged as NOUN (should be VERB)
+
+### 2.2 Adjectives Mistagged as NOUN
+
+- **#39** gorgeous mistagged as NOUN (should be ADJ)
+- **#48** native (in non native speaker) mistagged as NOUN (should be ADJ)
+- **#56** fun, good, fit, better, clear mistagged as NOUN (should be ADJ)
+
+### 2.3 Adverbs Mistagged as NOUN
+
+- **#47** non (in non native speaker) mistagged as NOUN (should be ADV); so (in so happy) mistagged as NOUN (should be ADV)
+- **#54** really, anyway mistagged as NOUN (should be ADV)
+
+### 2.4 Pronouns Mistagged as NOUN
+
+- **#42** everyone mistagged as NOUN (should be PRON)
+
+### 2.5 Proper Nouns Mistagged as Common NOUN
+
+- **#14** Some Hong Kong store names (proper nouns) mistagged as NOUN
+- **#16** Personal names (PROPN) mistagged as NOUN
+- **#25** YouTuber mistagged as NOUN (should be PROPN)
+- **#37** YouTube, threads, ig mistagged as NOUN (should be PROPN)
+
+---
+
+## 3. Mistagged as ADJ
+
+### 3.1 Nouns Mistagged as ADJ
+
+- **#17** Travel mistagged as ADJ (should be NOUN)
+- **#23** Mic mistagged as ADJ (should be NOUN), e.g. Are you wearing a mic?
+- **#35** base (e.g. Gundam base), ball mistagged as ADJ (should be NOUN)
+- **#43** like mistagged as ADJ, e.g. like (like is NOUN here)
+- **#59** topic mistagged as ADJ (should be NOUN)
+- **#62** details mistagged as ADJ (should be NOUN)
+- **#65** link (e.g. Can you share the dress link?), logic (e.g. He can use Chinese logic to speak Cantonese) mistagged as ADJ (should be NOUN)
+- **#68** lip (e.g. lip stick with you) mistagged as ADJ (should be NOUN)
+- **#71** feel (e.g. skewers shop... already has that kind of feel) mistagged as ADJ (should be NOUN)
+
+### 3.2 Verbs Mistagged as ADJ
+
+- **#52** mute mistagged as ADJ, e.g. really miss the mute sound (should be VERB)
+- **#57** update (in update vlog), inspired (past tense verb), appreciate mistagged as ADJ (should be VERB)
+
+### 3.3 Adverbs Mistagged as ADJ
+
+- **#58** much mistagged as ADJ, e.g. so much (should be ADV)
+
+---
+
+## 4. Mistagged as VERB
+
+### 4.1 Adjectives Mistagged as VERB
+
+- **#33** Common English adjectives mistagged as VERB
+- **#36** proud mistagged as VERB (should be ADJ)
+- **#61** inspiring mistagged as VERB (should be ADJ)
+
+### 4.2 Nouns Mistagged as VERB
+
+- **#44** post mistagged as VERB, e.g. I often see Sheepman’s post in threads (post is NOUN here)
+- **#49** channel (mistagged twice), team mistagged as VERB (should be NOUN)
+
+### 4.3 Adverbs Mistagged as VERB
+
+- **#60** yet mistagged as VERB, e.g. the best is yet to come (should be ADV)
+
+### 4.4 Gerunds Mistagged as VERB
+
+- **#63** Gerunds mistagged as VERB, e.g. planning in "propose planning" (should be NOUN)
+
+---
+
+## 5. Mistagged as Other POS
+
+### 5.1 Nouns Mistagged as ADV
+
+- **#12** Lunch (should be NOUN) mistagged as ADV
+- **#27** casino (should be NOUN) mistagged as ADV, e.g. The only one who knows the first response is casino
+
+### 5.2 Prepositions Mistagged as NOUN
+
+- **#24** over (should be ADP) mistagged as NOUN, e.g. over in "voice over"
+
+### 5.3 Other Special Mistaggings
+
+- **#3** up mistagged as VERB; up does not function as a verb in this context
+- **#7** like mistagged as ADJ; like only has NOUN and VERB as valid POS options
+- **#10** wah (interjection, INTJ) mistagged as NOUN, e.g. wah is so pretty
+
+---
+
+## 6. Segmentation and Recognition Issues
+
+### 6.1 Multi-word Proper Nouns Handled Incorrectly
+
+- **#6** Consecutive English words sometimes all tagged as NOUN
+- **#20** Multi-word proper nouns split into individual tokens each tagged PROPN, e.g. The base of Bakehouse Egg Tart is Sourdough Eggs Tart
+- **#26** Some Hong Kong store names not recognized accurately, e.g. Vission Bakery, Bake House
+- **#30** Consecutive capitalized English words should be recognized as a single PROPN unit, e.g. Now You See Me, House Keeping, Drag Queen
+
+### 6.2 Specific Token Recognition Issues
+
+- **#9** "po" in "po主" is an abbreviation of "post" and should be tagged as NOUN or PROPN
+- **#22** feel has context-dependent POS and is frequently mistagged: when preceded by "婷" or a verb, feel should be NOUN (e.g. My father speaks Cantonese and has the feeling of Mr. Ni Kuang)
+- **#15** Some product names are correctly tagged as PROPN, but tagging behavior is inconsistent
+- **#21** Family terms daddy, mom, uncle, mami, dad are recognized incorrectly
+- **#31** "D" used as a Cantonese substitute for "的" should be tagged X and not treated as an English token
+- **#32** Numbers should be tagged NUM
+- **#34** part-time should be tagged as NOUN and not split into two tokens
+
+---
+
+## 7. Rule Suggestions
+
+- **#19 follow rule**: If follow is preceded by a personal pronoun or person name as subject → tag as VERB
+- **#22 feel rule**: If feel is preceded by "generous" or a verb → tag feel as NOUN
+- **#28 "say" verb rule**: When say/speak precedes an English word → prioritize NOUN, e.g. say romansh
+- **#29 love rule**: If love is immediately followed by a pronoun (it / them etc.) → tag as VERB
+- **#30 consecutive capitalization rule**: Multiple consecutive capitalized English words → tag as PROPN as a unit
+- **#34 hyphenated compound rule**: Hyphenated words (e.g. part-time) → do not split, tag as NOUN
+- **#53 contextual rule**: Preceded by adverb → following token tagged VERB; preceded by numeral → following token tagged NOUN
+
+---
+
+## 8. PyCantonese Improvement Note (pyt v2)
+
+Version 2 introduced spaCy NER, improving upon v1 in the following ways:
+
+- v1 could not extract consecutive multi-word English tokens (e.g. only "Elon" was extracted from "Elon Musk"); v2 with NER recognizes multi-word entities as a whole
+- Person names and organization names such as BBC and Elon Musk are now correctly tagged as PROPN
+- Limitation: the NER-first strategy sometimes over-tags common English words as PROPN
+
+---
+
+## 中文版
+
 # PyCantonese 标注错误分析报告 / PyCantonese Annotation Error Analysis Report
 
 ---
