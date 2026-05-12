@@ -20,7 +20,7 @@ This project studies Cantonese-English code-switching POS tagging. We compare fo
 | lyl | Step 3 Gold Standard annotation + Step 4a Rule-based | Completed (2026-04-22) |
 | zxy | Step 4b BiLSTM-CRF | Completed (2026-04-24) |
 | szq | Step 4c mBERT fine-tuning | Completed (2026-04-23) |
-| pyt | Step 5 Evaluation and cross-model comparison | Pending |
+| pyt | Step 5 Evaluation and cross-model comparison | Completed |
 
 ---
 
